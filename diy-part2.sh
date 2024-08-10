@@ -9,7 +9,8 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-
+git clone https://github.com/CrazyPegasus/luci-app-accesscontrol-plus package/luci-app-accesscontrol-plus
+git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
 git clone https://github.com/QiuSimons/luci-app-daed package/dae 
 
 # Modify default IP

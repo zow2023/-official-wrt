@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/zow2023/openwrt
+  REPO_URL: https://github.com/zow2023/v23054
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
@@ -30,7 +30,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
     - name: Checkout

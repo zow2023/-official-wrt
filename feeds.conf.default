@@ -1,10 +1,7 @@
-src-git master https://github.com/zow2023/packages-other.git
-src-git packages https://git.openwrt.org/feed/packages.git
-src-git luci https://git.openwrt.org/project/luci.git
-src-git routing https://git.openwrt.org/feed/routing.git
-src-git telephony https://git.openwrt.org/feed/telephony.git
-#src-git video https://github.com/openwrt/video.git
-#src-git targets https://github.com/openwrt/targets.git
-#src-git oldpackages http://git.openwrt.org/packages.git
-#src-link custom /usr/src/openwrt/custom-feed
-
+src-git kenzo https://github.com/kenzok8/openwrt-packages
+src-git small https://github.com/zow2023/small
+src-git packages https://git.openwrt.org/feed/packages.git^89955ee711d92e6fb6db7dde9d9d7eb06841acdb 
+src-git luci https://git.openwrt.org/project/luci.git^85dec609ab12eee92601d492e4d472b01d71f7ae 
+src-git routing https://git.openwrt.org/feed/routing.git^a82e34d5e402ec77fd5facc1349352cacda2d0f8 
+src-git telephony https://git.openwrt.org/feed/telephony.git^98c8a5aa4624312ed758e2e2b6d4039050a1649d 
+src-git zow2023 https://github.com/zow2023/lienol-openwrt-packages.git;master

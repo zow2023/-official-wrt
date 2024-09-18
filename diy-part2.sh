@@ -11,15 +11,15 @@
 #
 
  
-rm -rf package/feeds/luci
-git clone https://github.com/immortalwrt/luci package/feeds/luci
+#rm -rf package/feeds/luci
+#git clone https://github.com/immortalwrt/luci package/feeds/luci
 
 #git clone https://github.com/CrazyPegasus/luci-app-accesscontrol-plus package/luci-app-accesscontrol-plus
 #git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
 #git clone https://github.com/QiuSimons/luci-app-daed package/dae 
 
 # Modify default IP
-sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.9.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile

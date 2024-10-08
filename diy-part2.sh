@@ -18,11 +18,14 @@ git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 #rm -rf feeds/luci/applications/luci-app-smartdns
 rm -rf feeds/packages/net/adguardhome
 
+git clone -b luci https://github.com/pexcn/openwrt-chinadns-ng.git package/luci-app-chinadns-ng
+git clone https://github.com/pexcn/openwrt-chinadns-ng.git package/chinadns-ng
+
 
 
 #git clone https://github.com/pymumu/luci-app-smartdns.git -b lede feeds/luci/applications/luci-app-smartdns/
 #git clone https://github.com/sbwml/OpenAppFilter package/OpenAppFilter
-#git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome 
+git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome 
 
 #git clone https://github.com/sirpdboy/luci-app-wizard package/luci-app-wizard
 #git clone https://github.com/DevOpenWRT-Router/luci-app-mqos package/luci-app-mqos

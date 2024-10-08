@@ -19,7 +19,7 @@ git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 rm -rf feeds/packages/net/adguardhome
 
 git clone -b luci https://github.com/pexcn/openwrt-chinadns-ng.git package/luci-app-chinadns-ng
-git clone https://github.com/pexcn/openwrt-chinadns-ng.git package/chinadns-ng
+#git clone https://github.com/pexcn/openwrt-chinadns-ng.git package/chinadns-ng
 
 
 

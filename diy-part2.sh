@@ -11,7 +11,7 @@
 #
 
  
-git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+#git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 
 #rm -rf feeds/packages/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*,smartdns}
 
@@ -28,23 +28,23 @@ git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-c
 
 #git clone https://github.com/pymumu/luci-app-smartdns.git -b lede feeds/luci/applications/luci-app-smartdns/
 #git clone https://github.com/sbwml/OpenAppFilter package/OpenAppFilter
-git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome 
+#git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome 
 
 #git clone https://github.com/sirpdboy/luci-app-wizard package/luci-app-wizard
 #git clone https://github.com/DevOpenWRT-Router/luci-app-mqos package/luci-app-mqos
 
 #git clone https://github.com/sirpdboy/sirpdboy-package package/sirpdboy-package     
 
-git clone https://github.com/CrazyPegasus/luci-app-accesscontrol-plus package/luci-app-accesscontrol-plus
-git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
-git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
-git clone https://github.com/sbwml/autocore-arm -b openwrt-22.03 package/autocore-arm 
-git clone https://github.com/gSpotx2f/luci-app-cpu-status package/luci-app-cpu-status
-git clone https://github.com/gSpotx2f/luci-app-cpu-perf package/luci-app-cpu-perf
-git clone https://github.com/gSpotx2f/luci-app-interfaces-statistics package/luci-app-interfaces-statistics
-git clone https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp-status
-git clone https://github.com/muink/luci-app-tinyfilemanager package/luci-app-tinyfilemanager
-git clone https://github.com/muink/luci-app-tn-netports package/luci-app-tn-netports
+#git clone https://github.com/CrazyPegasus/luci-app-accesscontrol-plus package/luci-app-accesscontrol-plus
+#git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
+#git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
+#git clone https://github.com/sbwml/autocore-arm -b openwrt-22.03 package/autocore-arm 
+#git clone https://github.com/gSpotx2f/luci-app-cpu-status package/luci-app-cpu-status
+#git clone https://github.com/gSpotx2f/luci-app-cpu-perf package/luci-app-cpu-perf
+#git clone https://github.com/gSpotx2f/luci-app-interfaces-statistics package/luci-app-interfaces-statistics
+#git clone https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp-status
+#git clone https://github.com/muink/luci-app-tinyfilemanager package/luci-app-tinyfilemanager
+#git clone https://github.com/muink/luci-app-tn-netports package/luci-app-tn-netports
 
 #git clone https://github.com/QiuSimons/luci-app-daed-next package/daed-next
 

@@ -36,7 +36,7 @@ git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-c
 #git clone https://github.com/sirpdboy/sirpdboy-package package/sirpdboy-package     
 
 #git clone https://github.com/CrazyPegasus/luci-app-accesscontrol-plus package/luci-app-accesscontrol-plus
-#git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
+git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
 #git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 #git clone https://github.com/sbwml/autocore-arm -b openwrt-22.03 package/autocore-arm 
 #git clone https://github.com/gSpotx2f/luci-app-cpu-status package/luci-app-cpu-status

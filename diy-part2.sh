@@ -10,6 +10,9 @@
 # See /LICENSE for more information.
 #
 
+sed -i '/files/adguardhome.*/d' xxxx/packages/net/adguardhome/Makefile
+sed -i '/$(INSTALL_DIR) $(1)/etc/d' xxxx/packages/net/adguardhome/Makefile
+
  
 #git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 

@@ -12,18 +12,17 @@
  
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-#rm -rf feeds/packages/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*,smartdns}
+rm -rf feeds/packages/net/{dnscrypt-proxy2,adguardhome,smartdns}
 
 rm -rf feeds/luci/applications/luci-app-smartdns
-rm -rf feeds/packages/net/adguardhome
-rm -rf feeds/packages/net/smartdns
 
+git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
 
 #git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
 #git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
-git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
-git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+git clone https://github.com/pymumu/openwrt-smartdns packages/net/smartdns
+git clone https://github.com/pymumu/luci-app-smartdns luci/applications/luci-app-smartdns
 #git clone https://github.com/sbwml/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome 
 

@@ -16,8 +16,8 @@ rm -rf feeds/packages/net/{dnscrypt-proxy2,adguardhome,smartdns}
 
 rm -rf feeds/luci/applications/luci-app-smartdns
 
-git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
-
+#git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
+git clone https://github.com/DNSCrypt/dnscrypt-proxy packages/net/dnscrypt-proxy2
 git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
 git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 

@@ -18,8 +18,8 @@ rm -rf feeds/luci/applications/luci-app-smartdns
 
 git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
 
-#git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
-#git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
+git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
+git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
 git clone https://github.com/pymumu/openwrt-smartdns packages/net/smartdns
 git clone https://github.com/pymumu/luci-app-smartdns luci/applications/luci-app-smartdns

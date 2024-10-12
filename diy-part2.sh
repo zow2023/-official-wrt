@@ -21,8 +21,8 @@ rm -rf feeds/packages/net/adguardhome
 
 #git clone https://github.com/pexcn/openwrt-chinadns-ng.git package/chinadns-ng
 #git clone -b luci https://github.com/pexcn/openwrt-chinadns-ng.git package/luci-app-chinadns-ng
-#git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
-#git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
+git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
+git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
 
 #git clone https://github.com/pymumu/luci-app-smartdns.git -b lede feeds/luci/applications/luci-app-smartdns/

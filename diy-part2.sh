@@ -23,8 +23,8 @@ git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
 git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
 
-git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
-git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+#git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
+#git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 #git clone https://github.com/sbwml/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome 
 

@@ -12,7 +12,8 @@
  
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-rm -rf feeds/packages/net/{adguardhome,xray*,v2ray*,v2ray*,sing*,smartdns}
+
+rm -rf feeds/packages/net/{adguardhome,xray-core,smartdns}
 rm -rf feeds/packages/net/dnscrypt-proxy2
 rm -rf feeds/luci/applications/luci-app-smartdns
 
@@ -23,8 +24,8 @@ git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
 git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
 
-#git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
-#git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
+git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 #git clone https://github.com/sbwml/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome 
 
@@ -37,6 +38,7 @@ git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-ad
 git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
 #git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 #git clone https://github.com/sbwml/autocore-arm -b openwrt-22.03 package/autocore-arm 
+
 git clone https://github.com/gSpotx2f/luci-app-cpu-status package/luci-app-cpu-status
 git clone https://github.com/gSpotx2f/luci-app-cpu-perf package/luci-app-cpu-perf
 git clone https://github.com/gSpotx2f/luci-app-interfaces-statistics package/luci-app-interfaces-statistics

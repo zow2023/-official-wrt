@@ -12,15 +12,15 @@
  
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-rm -rf feeds/packages/net/{dnscrypt-proxy2,adguardhome,smartdns}
-
+rm -rf feeds/packages/net/{adguardhome,smartdns}
+rm -rf feeds/packages/net/dnscrypt-proxy2
 rm -rf feeds/luci/applications/luci-app-smartdns
 
 #git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
 git clone https://github.com/DNSCrypt/dnscrypt-proxy feeds/packages/net/dnscrypt-proxy2
 
-#git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
-git clone https://github.com/zow2023/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
+git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
+git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
 
 git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
@@ -54,15 +54,15 @@ git clone https://github.com/muink/luci-app-tn-netports package/luci-app-tn-netp
 #rm -rf feeds/luci/applications/luci-app-passwall
 
 #git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-#git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
-#git clone https://github.com/xiaorouji/openwrt-passwall.git -b  luci-smartdns-dev package/passwall/luci
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+git clone https://github.com/xiaorouji/openwrt-passwall.git -b  luci-smartdns-dev package/passwall/luci
 #rm -rf feeds/package/helloworld
 #git clone https://github.com/fw876/helloworld.git -b master package/helloworld
 
 #rm -rf feeds/luci/applications/luci-app-mosdns
 #rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
 #rm -rf feeds/packages/utils/v2dat
-#rm -rf feeds/packages/net/adguardhome
+
 
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang

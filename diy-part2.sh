@@ -17,13 +17,14 @@ rm -rf feeds/packages/net/{dnscrypt-proxy2,adguardhome,smartdns}
 rm -rf feeds/luci/applications/luci-app-smartdns
 
 #git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
-git clone https://github.com/DNSCrypt/dnscrypt-proxy package/dnscrypt-proxy2
+git clone https://github.com/DNSCrypt/dnscrypt-proxy feeds/packages/net/dnscrypt-proxy2
+
 #git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
 #git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 git clone https://github.com/ikghx/luci/tree/openwrt-23.05/applications/luci-app-chinadns-ng package/luci-app-chinadns-ng
 
-git clone https://github.com/pymumu/openwrt-smartdns packages/net/smartdns
-git clone https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
+git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
+git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 #git clone https://github.com/sbwml/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome 
 

@@ -12,7 +12,7 @@
  
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-rm -rf feeds/packages/net/{adguardhome,smartdns}
+rm -rf feeds/packages/net/{adguardhome,xray*,v2ray*,v2ray*,sing*,smartdns}
 rm -rf feeds/packages/net/dnscrypt-proxy2
 rm -rf feeds/luci/applications/luci-app-smartdns
 

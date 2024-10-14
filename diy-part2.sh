@@ -13,9 +13,12 @@
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
-rm -rf feeds/packages/net/{adguardhome,xray-core,smartdns}
+rm -rf feeds/packages/net/{adguardhome,smartdns}
 rm -rf feeds/packages/net/dnscrypt-proxy2
 rm -rf feeds/luci/applications/luci-app-smartdns
+# 移除 openwrt feeds 自带的核心包
+rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
+git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 
 #git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
 git clone https://github.com/DNSCrypt/dnscrypt-proxy feeds/packages/net/dnscrypt-proxy2
@@ -53,10 +56,10 @@ git clone https://github.com/muink/luci-app-tn-netports package/luci-app-tn-netp
 
 #rm -rf feeds/packages/net/xray-core  
 #rm -rf feeds/packages/net/chinadns-ng 
-#rm -rf feeds/luci/applications/luci-app-passwall
+rm -rf feeds/luci/applications/luci-app-passwall
 
 #git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+#git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 git clone https://github.com/xiaorouji/openwrt-passwall.git -b  luci-smartdns-dev package/passwall/luci
 #rm -rf feeds/package/helloworld
 #git clone https://github.com/fw876/helloworld.git -b master package/helloworld

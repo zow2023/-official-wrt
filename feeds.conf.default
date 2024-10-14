@@ -5,7 +5,7 @@ src-git-full luci https://git.openwrt.org/project/luci.git^74dd23bdb1c2ba00c68e3
 src-git-full routing https://git.openwrt.org/feed/routing.git^777c115b0a6336d6582c5992d25b631b6d6d21fd
 src-git-full telephony https://git.openwrt.org/feed/telephony.git^33f2ae757b96bf32b0202b211973a246ca2c919b
 
-
+#sudo apt install build-essential libncurses5-dev gawk git subversion gettext libssl-dev python3 unzip zlib1g-dev file wget
 #src-git packages https://git.openwrt.org/feed/packages.git^b5ed85f6e94aa08de1433272dc007550f4a28201
 #src-git luci https://git.openwrt.org/project/luci.git^63ba3cba5b7bfb803a875d4d8f01248634687fd5
 #src-git routing https://git.openwrt.org/feed/routing.git^e351d1e623e9ef2ab78f28cb1ce8d271d28c902d

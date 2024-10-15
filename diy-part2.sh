@@ -22,7 +22,7 @@ git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 
 git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
 #git clone https://github.com/DNSCrypt/dnscrypt-proxy.git feeds/packages/net/dnscrypt-proxy2
-git clone https://github.com/shadowsocks/openwrt-feeds.git package/libs
+git clone https://github.com/zow2023/openwrt-feeds.git package/libs
 git clone https://github.com/kenzok78/openwrt-minisign.git package/minisign
 
 git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng

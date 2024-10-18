@@ -13,9 +13,9 @@
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
-rm -rf feeds/packages/net/{adguardhome,dnscrypt-proxy2,chinadns-ng,smartdns}
+# rm -rf feeds/packages/net/{adguardhome,dnscrypt-proxy2,chinadns-ng,smartdns}
 
-rm -rf feeds/luci/applications/luci-app-smartdns
+# rm -rf feeds/luci/applications/luci-app-smartdns
 # 移除 openwrt feeds 自带的核心包
 # rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
 # git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
@@ -27,8 +27,8 @@ rm -rf feeds/luci/applications/luci-app-smartdns
 # git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
 #git clone https://github.com/kenzok78/openwrt-minisign.git package/minisign
 
-# git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
-# git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
+git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
+git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
 
 git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns

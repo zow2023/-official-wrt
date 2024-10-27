@@ -13,7 +13,7 @@
 #src-git telephony https://git.openwrt.org/feed/telephony.git^98c8a5aa4624312ed758e2e2b6d4039050a1649d
 
 
-src-git-full packages https://github.com/x-wrt/packages.git
+src-git-full packages https://github.com/zow2023/packages.git
 src-git-full luci https://github.com/x-wrt/luci.git
 src-git-full routing https://github.com/x-wrt/routing.git
 src-git-full telephony https://github.com/x-wrt/telephony.git

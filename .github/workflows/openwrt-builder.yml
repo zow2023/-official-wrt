@@ -49,7 +49,11 @@ jobs:
         sudo docker image prune --all --force
         sudo -E apt-get -qq update
         sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004)
-        sudo -E apt-get install libelf-dev libbpf-dev clang-13 llvm-13
+        sudo -E apt-get install libelf-dev libbpf-dev
+        wget https://apt.llvm.org/llvm.sh
+        chmod +x llvm.sh
+        sudo ./llvm.sh clang-13
+        sudo -E apt-get install -y clang-13
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir

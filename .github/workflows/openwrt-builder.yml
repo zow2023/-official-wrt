@@ -47,7 +47,8 @@ jobs:
         sudo apt-get remove --purge 'clang-*' 'libclang-*'
         wget https://apt.llvm.org/llvm.sh
         sudo chmod +x llvm.sh
-        sudo ./llvm.sh 15sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-15 100
+        sudo ./llvm.sh 15
+        sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-15 100
         sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-15 100
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean

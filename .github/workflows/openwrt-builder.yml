@@ -44,8 +44,7 @@ jobs:
         sudo docker image prune --all --force      
         sudo -E apt-get -qq update
         sudo -E apt-get -qq install -y build-essential git wget curl rsync flex bison gawk python3-distutils python3-pip libncurses5-dev zlib1g-dev clang-15 llvm-15 libelf-dev libbpf-dev zlib1g-dev linux-headers-$(uname -r) bpfcc-tools 
-        sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-15 100
-        sudo update-alternatives --install /usr/bin/llvm-config llvm-config /usr/bin/llvm-config-15 100
+        sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-15 100 --slave /usr/bin/clang++ clang++ /usr/bin/clang++-15
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir

@@ -62,8 +62,8 @@ jobs:
     - name: Clone source code
       working-directory: ${{ github.workspace }}/openwrt
       run: |
-        df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        df -hT .
+        git clone $REPO_URL -b $REPO_BRANCH .
         ln -sf "${{ github.workspace }}/openwrt" /openwrt
         
     - name: Load custom feeds

@@ -20,7 +20,7 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/zow2023/x-wrt
+  REPO_URL: https://github.com/zow2023/v23054
   REPO_BRANCH: 24.01_b202403081335
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: x.config

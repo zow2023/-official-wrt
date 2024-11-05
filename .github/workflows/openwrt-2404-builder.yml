@@ -21,7 +21,7 @@ on:
 
 env:
   REPO_URL: https://github.com/zow2023/PCODE
-  REPO_BRANCH: 24.04_202408182159
+  REPO_BRANCH: 202409301623
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: x.config
   DIY_P1_SH: diy-part1.sh

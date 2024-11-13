@@ -17,10 +17,10 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/zow2023/x-wrt
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/zow2023/openwrt-official
+  REPO_BRANCH: openwrt-24.10
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: x.config
+  CONFIG_FILE: 2410.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -44,15 +44,6 @@ jobs:
         sudo docker image prune --all --force      
         sudo -E apt-get -qq update
         sudo -E apt-get -qq install -y build-essential git wget curl rsync flex bison gawk python3-distutils python3-pip libncurses5-dev zlib1g-dev clang-15 llvm-15 libelf-dev libbpf-dev zlib1g-dev linux-headers-$(uname -r) bpfcc-tools 
-        sudo update-alternatives --install /usr/bin/llvm-config llvm-config /usr/bin/llvm-config-15 20
-        sudo update-alternatives --install /usr/bin/llvm-config llvm-config /usr/bin/llvm-config-14 10
-        sudo update-alternatives --config llvm-config
-        sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-15 20
-        sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-14 10
-        sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-15 20
-        sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-14 10
-        sudo update-alternatives --config clang
-        sudo update-alternatives --config clang++
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir

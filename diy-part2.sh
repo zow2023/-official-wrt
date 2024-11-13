@@ -10,9 +10,9 @@
 # See /LICENSE for more information.
 
  
-git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-
+# git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+# git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+git clone https://github.com/sbwml/luci-theme-argon package/luci-theme-argon
 # rm -rf feeds/packages/net/{adguardhome,dnscrypt-proxy2,chinadns-ng,smartdns}
 
 # rm -rf feeds/luci/applications/luci-app-smartdns
@@ -27,19 +27,21 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 # git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
 #git clone https://github.com/kenzok78/openwrt-minisign.git package/minisign
 
-git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
-git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
+# git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
+# git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
 
-git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
-git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+# git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
+# git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 #git clone https://github.com/sbwml/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome 
 
 #git clone https://github.com/sirpdboy/luci-app-wizard package/luci-app-wizard
 #git clone https://github.com/DevOpenWRT-Router/luci-app-mqos package/luci-app-mqos
 
-#git clone https://github.com/sirpdboy/sirpdboy-package package/sirpdboy-package     
+git clone https://github.com/muink/openwrt-einat-ebpf.git package/einat-ebpf
+git clone https://github.com/muink/luci-app-einat.git package/luci-app-einat
+    
 
 #git clone https://github.com/CrazyPegasus/luci-app-accesscontrol-plus package/luci-app-accesscontrol-plus
 git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
@@ -62,8 +64,8 @@ git clone https://github.com/QiuSimons/luci-app-daed package/dae     
 #rm -rf feeds/packages/net/chinadns-ng 
 # rm -rf feeds/luci/applications/luci-app-passwall
 
-#git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-#git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 # git clone https://github.com/xiaorouji/openwrt-passwall.git -b  luci-smartdns-dev package/passwall/luci
 #rm -rf feeds/package/helloworld
 #git clone https://github.com/fw876/helloworld.git -b master package/helloworld

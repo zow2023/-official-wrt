@@ -48,9 +48,9 @@ git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-pa
 #git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 #git clone https://github.com/sbwml/autocore-arm -b openwrt-22.03 package/autocore-arm 
 
-git clone https://github.com/gSpotx2f/luci-app-cpu-status package/luci-app-cpu-status
+# git clone https://github.com/gSpotx2f/luci-app-cpu-status package/luci-app-cpu-status
 git clone https://github.com/gSpotx2f/luci-app-cpu-perf package/luci-app-cpu-perf
-git clone https://github.com/gSpotx2f/luci-app-interfaces-statistics package/luci-app-interfaces-statistics
+# git clone https://github.com/gSpotx2f/luci-app-interfaces-statistics package/luci-app-interfaces-statistics
 git clone https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp-status
 git clone https://github.com/muink/luci-app-tinyfilemanager package/luci-app-tinyfilemanager
 git clone https://github.com/muink/luci-app-tn-netports package/luci-app-tn-netports
@@ -64,8 +64,8 @@ git clone https://github.com/muink/luci-app-tn-netports package/luci-app-tn-netp
 #rm -rf feeds/packages/net/chinadns-ng 
 # rm -rf feeds/luci/applications/luci-app-passwall
 
-# git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-# git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 # git clone https://github.com/xiaorouji/openwrt-passwall.git -b  luci-smartdns-dev package/passwall/luci
 #rm -rf feeds/package/helloworld
 #git clone https://github.com/fw876/helloworld.git -b master package/helloworld

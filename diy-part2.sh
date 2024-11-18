@@ -10,9 +10,9 @@
 # See /LICENSE for more information.
 
  
-# git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-# git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-git clone https://github.com/sbwml/luci-theme-argon package/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+# git clone https://github.com/sbwml/luci-theme-argon package/luci-theme-argon
 # rm -rf feeds/packages/net/{adguardhome,dnscrypt-proxy2,chinadns-ng,smartdns}
 
 # rm -rf feeds/luci/applications/luci-app-smartdns

@@ -16,6 +16,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 
 rm -rf feeds/packages/net/natmap
 rm -rf feeds/luci/applications/luci-app-natmap
+git clone https://github.com/muink/openwrt-natmapt.git package/natmapt
 git clone https://github.com/muink/luci-app-natmapt.git package/luci-app-natmapt
 
 # rm -rf feeds/luci/applications/luci-app-smartdns

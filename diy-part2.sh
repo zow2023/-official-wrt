@@ -13,7 +13,10 @@
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 # git clone https://github.com/sbwml/luci-theme-argon package/luci-theme-argon
-# rm -rf feeds/packages/net/{adguardhome,dnscrypt-proxy2,chinadns-ng,smartdns}
+
+rm -rf feeds/packages/net/natmap
+rm -rf feeds/luci/applications/luci-app-natmap
+git clone https://github.com/muink/luci-app-natmapt.git package/luci-app-natmapt
 
 # rm -rf feeds/luci/applications/luci-app-smartdns
 # 移除 openwrt feeds 自带的核心包
@@ -39,8 +42,8 @@ git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-ad
 #git clone https://github.com/sirpdboy/luci-app-wizard package/luci-app-wizard
 #git clone https://github.com/DevOpenWRT-Router/luci-app-mqos package/luci-app-mqos
 
-git clone https://github.com/muink/openwrt-einat-ebpf.git package/einat-ebpf
-git clone https://github.com/muink/luci-app-einat.git package/luci-app-einat
+# git clone https://github.com/muink/openwrt-einat-ebpf.git package/einat-ebpf
+# git clone https://github.com/muink/luci-app-einat.git package/luci-app-einat
     
 
 #git clone https://github.com/CrazyPegasus/luci-app-accesscontrol-plus package/luci-app-accesscontrol-plus

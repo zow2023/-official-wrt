@@ -59,6 +59,7 @@ git clone https://github.com/gSpotx2f/luci-app-cpu-perf package/luci-app-cpu-per
 git clone https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp-status
 git clone https://github.com/muink/luci-app-tinyfilemanager package/luci-app-tinyfilemanager
 git clone https://github.com/muink/luci-app-tn-netports package/luci-app-tn-netports
+git clone -b main --single-branch https://github.com/lxz1104/openwrt-fullconenat package/fullconenat
 
 #git clone https://github.com/QiuSimons/luci-app-daed-next package/daed-next
 

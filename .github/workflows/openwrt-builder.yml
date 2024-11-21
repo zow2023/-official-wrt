@@ -45,7 +45,7 @@ jobs:
         sudo -E apt-get -qq update
         sudo -E apt-get -qq install -y build-essential git wget curl cargo rsync flex bc bison gawk python3-distutils python3-pip \
                 libncurses5-dev libncurses-dev libc6-dev libclang-dev libssl-dev clang-15 llvm-15 libelf1 libelf-dev libbpf-dev \
-                zlib1g-dev  bpfcc-tools musl-dev rustc pkg-config dwarves
+                zlib1g-dev  bpfcc-tools musl-dev rustc pkg-config dwarves mkisofs qemu-utils upx-ucl gettext
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir

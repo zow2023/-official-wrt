@@ -62,6 +62,10 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        cd openwrt
+        sed -i 's/--set=llvm.download-ci-llvm=true/--set=source.crates-io.replace-with=mirror \\\
+        --set=source.mirror.registry=sparse+https:\/\/mirrors.bfsu.edu.cn\/crates.io-index\/ \\\
+        --set=llvm.download-ci-llvm=false/' package/feeds/packages/rust/Makefile  
 
     - name: Load custom feeds
       run: |

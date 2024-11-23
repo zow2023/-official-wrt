@@ -58,37 +58,10 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-        
+        chmod +x ./scripts/sync_kernel_config_to_global.sh
+        ./scripts/sync_kernel_config_to_global.sh
+  
 
-    - name: Create sync script
-      run: |
-         cd openwrt
-         cat <<'EOF' > sync_kernel_config_to_global.sh
-         #!/bin/bash
-         set -e
-         ROOT_DIR="$(pwd)"
-         KERNEL_CONFIG_FILE="target/linux/$(ls target/linux | head -n 1)/config-$(cat include/kernel-version.mk | grep LINUX_VERSION-[0-9] | awk -F '-' '{print $2}')"
-         GLOBAL_CONFIG_FILE=".config"
-
-         if [ ! -f "$GLOBAL_CONFIG_FILE" ]; then
-             echo "Global config file not found: $GLOBAL_CONFIG_FILE"
-             exit 1
-         fi
-
-         if [ ! -f "$KERNEL_CONFIG_FILE" ]; then
-             echo "Kernel config file not found: $KERNEL_CONFIG_FILE"
-             exit 1
-         fi
-
-         echo "Synchronizing kernel config changes to global config..."
-         scripts/kconfig.pl syncconfig "$GLOBAL_CONFIG_FILE" "$KERNEL_CONFIG_FILE"
-         make defconfig
-         echo "Kernel configuration changes have been synchronized to the global .config successfully."
-         EOF
-         chmod +x sync_kernel_config_to_global.s
-
-
-          
     - name: Modify kernel config
       run: |
         cd openwrt

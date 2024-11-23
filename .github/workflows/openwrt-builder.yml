@@ -70,9 +70,7 @@ jobs:
     - name: Sync config
       run: |
         cd openwrt
-        make defconfig
-        make savedefconfig
-        cp defconfig .config
+        make kernel_oldconfig
         
     
 

@@ -72,8 +72,8 @@ jobs:
     - name: Sync config
       run: |
         cd openwrt
-        chmod +x ./scripts/sync_kernel_config_to_global.sh
-        ./scripts/sync_kernel_config_to_global.sh
+        chmod +x /scripts/sync_kernel_config_to_global.sh
+        /scripts/sync_kernel_config_to_global.sh
             
 
     - name: Load custom feeds

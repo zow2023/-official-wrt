@@ -58,9 +58,7 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-        chmod +x ./scripts/sync_kernel_config_to_global.sh
-        ./scripts/sync_kernel_config_to_global.sh
-  
+          
 
     - name: Modify kernel config
       run: |
@@ -73,10 +71,10 @@ jobs:
                 
     - name: Sync config
       run: |
-        chmod +x sync_kernel_config_to_global.sh
-        ./sync_kernel_config_to_global.sh
-        
-    
+        cd openwrt
+        chmod +x ../scripts/sync_kernel_config_to_global.sh
+        ../scripts/sync_kernel_config_to_globa
+            
 
     - name: Load custom feeds
       run: |

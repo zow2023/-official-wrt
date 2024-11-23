@@ -70,7 +70,7 @@ jobs:
     - name: Sync config
       run: |
         cd openwrt
-        make kernel_oldconfig
+        yes "" | make oldconfig
         
     
 

@@ -70,7 +70,7 @@ jobs:
     - name: Sync config
       run: |
           cd openwrt
-          make defconfig    
+          make kernel_oldconfig    
 
     - name: Load custom feeds
       run: |

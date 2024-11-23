@@ -66,11 +66,13 @@ jobs:
         echo 'CONFIG_DEBUG_INFO=y' >> target/linux/mediatek/mt7622/config-5.15
         echo 'CONFIG_DEBUG_INFO_REDUCED=n' >> target/linux/mediatek/mt7622/config-5.15
         echo 'CONFIG_DEBUG_INFO_BTF=y' >> target/linux/mediatek/mt7622/config-5.15
-        
+                
     - name: Sync config
       run: |
-          cd openwrt
-          scripts/kconfig.pl + default.config config.in > .config
+        cd openwrt
+        make savedefconfig
+        cp defconfig .config
+        make defconfig
     
 
     - name: Load custom feeds

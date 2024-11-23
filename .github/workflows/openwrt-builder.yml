@@ -62,17 +62,18 @@ jobs:
     - name: Modify kernel config
       run: |
         cd openwrt
-        echo 'CONFIG_DEBUG_KERNEL=y' >> target/linux/mediatek/mt7622/config-5.15
-        echo 'CONFIG_DEBUG_INFO=y' >> target/linux/mediatek/mt7622/config-5.15
-        echo 'CONFIG_DEBUG_INFO_REDUCED=n' >> target/linux/mediatek/mt7622/config-5.15
-        echo 'CONFIG_DEBUG_INFO_BTF=y' >> target/linux/mediatek/mt7622/config-5.15
+        echo 'CONFIG_KERNEL_DEBUG_KERNEL=y' >> .config
+        echo 'CONFIG_KERNEL_DEBUG_INFO=y' >> .config
+        echo 'CONFIG_KERNEL_DEBUG_INFO_REDUCED=n' >> .config
+        echo 'CONFIG_KERNEL_DEBUG_INFO_BTF=y' >> .config
                 
     - name: Sync config
       run: |
         cd openwrt
+        make defconfig
         make savedefconfig
         cp defconfig .config
-        make defconfig
+        
     
 
     - name: Load custom feeds

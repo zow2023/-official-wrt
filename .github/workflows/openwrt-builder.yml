@@ -70,7 +70,8 @@ jobs:
     - name: Sync config
       run: |
           cd openwrt
-          make olddefconfig    
+          scripts/kconfig.pl + default.config config.in > .config
+    
 
     - name: Load custom feeds
       run: |

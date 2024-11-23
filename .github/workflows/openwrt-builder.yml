@@ -66,11 +66,12 @@ jobs:
         echo 'CONFIG_KERNEL_DEBUG_INFO=y' >> .config
         echo 'CONFIG_KERNEL_DEBUG_INFO_REDUCED=n' >> .config
         echo 'CONFIG_KERNEL_DEBUG_INFO_BTF=y' >> .config
+        make defconfig
                 
     - name: Sync config
       run: |
-        cd openwrt
-        yes "" | make kernel_oldconfig
+        chmod +x sync_kernel_config_to_global.sh
+        ./sync_kernel_config_to_global.sh
         
     
 

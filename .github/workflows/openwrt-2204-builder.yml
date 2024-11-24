@@ -67,11 +67,13 @@ jobs:
         echo 'CONFIG_KERNEL_DEBUG_INFO=y' >> .config
         echo 'CONFIG_KERNEL_DEBUG_INFO_REDUCED=n' >> .config
         echo 'CONFIG_KERNEL_DEBUG_INFO_BTF=y' >> .config
-        yes '' | make oldconfig
-        
                 
-   # - name: Sync kernel config
-   #   run: |
+                
+    - name: Sync kernel config
+      run: |
+       make -C build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_mt7622/linux-5.15.167 oldconfig　
+       make -C build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_mt7622/linux-5.15.167 prepare
+       
       
        
 

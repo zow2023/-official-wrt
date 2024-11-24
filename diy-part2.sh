@@ -63,7 +63,7 @@ git clone https://github.com/muink/luci-app-tn-netports package/luci-app-tn-netp
 #git clone https://github.com/QiuSimons/luci-app-daed-next package/daed-next
 
 #git clone https://github.com/sbwml/v2ray-geodata package/daed/v2ray-geodata 
-# git clone https://github.com/QiuSimons/luci-app-daed package/dae     
+git clone https://github.com/QiuSimons/luci-app-daed package/dae     
 
 #rm -rf feeds/packages/net/xray-core  
 #rm -rf feeds/packages/net/chinadns-ng 

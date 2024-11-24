@@ -51,14 +51,7 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-
-    - name: Clone source code
-      working-directory: /workdir
-      run: |
-        df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-          
+        
 
     - name: Modify kernel config
       run: |
@@ -67,15 +60,24 @@ jobs:
         echo 'CONFIG_KERNEL_DEBUG_INFO=y' >> .config
         echo 'CONFIG_KERNEL_DEBUG_INFO_REDUCED=n' >> .config
         echo 'CONFIG_KERNEL_DEBUG_INFO_BTF=y' >> .config
-                
-                
+        make defconfig
+
     - name: Sync kernel config
       run: |
-       cd openwrt
-       make -C build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_mt7622/linux-5.15.167 oldconfig　
-       make -C build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_mt7622/linux-5.15.167 prepare
-       
-      
+        cd openwrt
+        make kernel_menuconfig
+
+    - name: Clean build environment
+      run: |
+        cd openwrt
+        make target/linux/clean
+
+    - name: Compile kernel
+      run: |
+        cd openwrt
+        make target/linux/prepare
+        make target/linux/compile
+
        
 
     - name: Load custom feeds

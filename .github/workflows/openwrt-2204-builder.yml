@@ -67,13 +67,13 @@ jobs:
         echo 'CONFIG_KERNEL_DEBUG_INFO=y' >> .config
         echo 'CONFIG_KERNEL_DEBUG_INFO_REDUCED=n' >> .config
         echo 'CONFIG_KERNEL_DEBUG_INFO_BTF=y' >> .config
-        make defconfig
+        
                 
-    - name: Sync config
+    - name: Sync kernel config
       run: |
-        cd openwrt
-        chmod +x ./scripts/sync_kernel_config_to_global.sh
-        ./scripts/sync_kernel_config_to_global.sh
+       export KCONFIG_NOSILENTUPDATE=1
+       export KCONFIG_NONINTERACTIVE=1
+       make kernel_oldconfig
             
 
     - name: Load custom feeds

@@ -67,14 +67,13 @@ jobs:
         echo 'CONFIG_KERNEL_DEBUG_INFO=y' >> .config
         echo 'CONFIG_KERNEL_DEBUG_INFO_REDUCED=n' >> .config
         echo 'CONFIG_KERNEL_DEBUG_INFO_BTF=y' >> .config
+        yes '' | make olddefconfig
         
                 
-    - name: Sync kernel config
-      run: |
-       export KCONFIG_NOSILENTUPDATE=1
-       export KCONFIG_NONINTERACTIVE=1
-       make kernel_oldconfig
-            
+   # - name: Sync kernel config
+   #   run: |
+      
+       
 
     - name: Load custom feeds
       run: |

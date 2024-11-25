@@ -77,7 +77,7 @@ jobs:
           target/linux/generic/config-5.15 \
           target/linux/mediatek/mt7622/config-5.15 \
           > build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_mt7622/linux-5.15.167/.config
-        cat build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_mt7622/linux-5.15.167/.config | grep 
+        cat build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_mt7622/linux-5.15.167/.config | grep CONFIG_DEBUG_INFO_BTF
         make target/linux/clean
         make target/linux/mediatek/mt7622/prepare V=s
 

@@ -71,7 +71,7 @@ jobs:
     - name: Sync kernel config
       run: |
         cd openwrt
-        yes '' | make kernel_oldconfig
+        make defconfig
         make target/linux/prepare V=s
 
     

@@ -89,18 +89,7 @@ jobs:
         echo 'CONFIG_DEBUG_INFO=y' >> target/linux/mediatek/mt7622/config-5.15
         echo 'CONFIG_DEBUG_INFO_REDUCED=n' >> target/linux/mediatek/mt7622/config-5.15
         echo 'CONFIG_DEBUG_INFO_BTF=y' >> target/linux/mediatek/mt7622/config-5.15
-        
-        
-    - name: Sync kernel config
-      run: |
-        cd openwrt
-        mkdir -p build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_mt7622/linux-5.15.167
-        scripts/kconfig.pl + \
-          target/linux/generic/config-5.15 \
-          target/linux/mediatek/mt7622/config-5.15 \
-          > build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_mt7622/linux-5.15.167/.config
-        cat build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_mt7622/linux-5.15.167/.config | grep CONFIG_DEBUG_KERNEL
-                
+                      
 
     - name: Download package
       id: package

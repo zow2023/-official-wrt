@@ -56,30 +56,18 @@ jobs:
     - name: Modify kernel config
       run: |
         cd openwrt
-        echo 'CONFIG_KERNEL_DEBUG_KERNEL=y' >> .config
-        echo 'CONFIG_KERNEL_DEBUG_INFO=y' >> .config
-        echo 'CONFIG_KERNEL_DEBUG_INFO_REDUCED=n' >> .config
-        echo 'CONFIG_KERNEL_DEBUG_INFO_BTF=y' >> .config
-        make defconfig
-
+        echo 'CONFIG_DEBUG_KERNEL=y' >> target/linux/mediatek/mt7622/config-5.15
+        echo 'CONFIG_DEBUG_INFO=y' >> target/linux/mediatek/mt7622/config-5.15
+        echo 'CONFIG_DEBUG_INFO_REDUCED=n' >> target/linux/mediatek/mt7622/config-5.15
+        echo 'CONFIG_DEBUG_INFO_BTF=y' >> target/linux/mediatek/mt7622/config-5.15
+      
     - name: Sync kernel config
       run: |
         cd openwrt
-        make kernel_menuconfig
+        yes '' | make kernel_oldconfig
+        make target/linux/prepare V=s
 
-    - name: Clean build environment
-      run: |
-        cd openwrt
-        make target/linux/clean
-
-    - name: Compile kernel
-      run: |
-        cd openwrt
-        make target/linux/prepare
-        make target/linux/compile
-
-       
-
+    
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default

@@ -17,8 +17,8 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt
-  REPO_BRANCH: v23.05.4
+  REPO_URL: https://github.com/zow2023/PCODE
+  REPO_BRANCH: v23055
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: v23055.config
   DIY_P1_SH: diy-part1.sh
@@ -30,7 +30,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout

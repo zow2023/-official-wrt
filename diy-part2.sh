@@ -14,11 +14,11 @@ git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 # git clone https://github.com/sbwml/luci-theme-argon package/luci-theme-argon
 
-rm -rf feeds/packages/net/natmap
-rm -rf feeds/luci/applications/luci-app-natmap
-git clone https://github.com/muink/openwrt-natmapt.git package/natmapt
-git clone https://github.com/muink/openwrt-stuntman.git package/stuntman
-git clone https://github.com/muink/luci-app-natmapt.git package/luci-app-natmapt
+# rm -rf feeds/packages/net/natmap
+# rm -rf feeds/luci/applications/luci-app-natmap
+#git clone https://github.com/muink/openwrt-natmapt.git package/natmapt
+#git clone https://github.com/muink/openwrt-stuntman.git package/stuntman
+#git clone https://github.com/muink/luci-app-natmapt.git package/luci-app-natmapt
 
 git clone https://github.com/muink/openwrt-einat-ebpf.git package/einat-ebpf
 git clone https://github.com/muink/luci-app-einat.git package/luci-app-einat

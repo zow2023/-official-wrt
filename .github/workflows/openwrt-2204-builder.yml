@@ -80,15 +80,6 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-
-
- #   - name: Modify kernel config
-  #    run: |
-   #     cd openwrt
-  #      echo 'CONFIG_DEBUG_KERNEL=y' >> target/linux/mediatek/mt7622/config-5.15
-  ##      echo 'CONFIG_DEBUG_INFO=y' >> target/linux/mediatek/mt7622/config-5.15
-  #      echo 'CONFIG_DEBUG_INFO_REDUCED=n' >> target/linux/mediatek/mt7622/config-5.15
-  #      echo 'CONFIG_DEBUG_INFO_BTF=y' >> target/linux/mediatek/mt7622/config-5.15
                       
 
     - name: Download package

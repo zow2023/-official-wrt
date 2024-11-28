@@ -20,8 +20,8 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 #git clone https://github.com/muink/openwrt-stuntman.git package/stuntman
 #git clone https://github.com/muink/luci-app-natmapt.git package/luci-app-natmapt
 
-git clone https://github.com/muink/openwrt-einat-ebpf.git package/einat-ebpf
-git clone https://github.com/muink/luci-app-einat.git package/luci-app-einat
+# git clone https://github.com/muink/openwrt-einat-ebpf.git package/einat-ebpf
+# git clone https://github.com/muink/luci-app-einat.git package/luci-app-einat
 
 # rm -rf feeds/luci/applications/luci-app-smartdns
 # 移除 openwrt feeds 自带的核心包

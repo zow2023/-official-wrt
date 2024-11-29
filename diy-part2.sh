@@ -13,6 +13,7 @@
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 # git clone https://github.com/sbwml/luci-theme-argon package/luci-theme-argon
+git clone https://github.com/fullcone-nat-nftables/nft-fullcone  package/nft-fullcone
 
 # rm -rf feeds/packages/net/natmap
 # rm -rf feeds/luci/applications/luci-app-natmap

@@ -31,7 +31,7 @@ git clone https://github.com/fullcone-nat-nftables/nft-fullcone  package/nft-ful
 
 
 #git clone https://github.com/DNSCrypt/dnscrypt-proxy.git feeds/packages/net/dnscrypt-proxy2
-# git clone https://github.com/zow2023/openwrt-feeds.git package/libs
+
 # git clone https://github.com/peter-tank/openwrt-minisign.git package/minisign
 # git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
 #git clone https://github.com/kenzok78/openwrt-minisign.git package/minisign
@@ -42,7 +42,7 @@ git clone https://github.com/fullcone-nat-nftables/nft-fullcone  package/nft-ful
 
 # git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
 # git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
-#git clone https://github.com/sbwml/OpenAppFilter package/OpenAppFilter
+
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome 
 
 #git clone https://github.com/sirpdboy/luci-app-wizard package/luci-app-wizard
@@ -64,7 +64,7 @@ git clone https://github.com/muink/luci-app-tn-netports package/luci-app-tn-netp
 #git clone https://github.com/QiuSimons/luci-app-daed-next package/daed-next
 
 #git clone https://github.com/sbwml/v2ray-geodata package/daed/v2ray-geodata 
-git clone https://github.com/QiuSimons/luci-app-daed package/dae     
+# git clone https://github.com/QiuSimons/luci-app-daed package/dae     
 
 #rm -rf feeds/packages/net/xray-core  
 #rm -rf feeds/packages/net/chinadns-ng 

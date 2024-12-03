@@ -25,9 +25,9 @@ git clone https://github.com/fullcone-nat-nftables/nft-fullcone  package/nft-ful
 # git clone https://github.com/muink/luci-app-einat.git package/luci-app-einat
 
 rm -rf feeds/luci/applications/luci-app-smartdns
+rm -rf feeds/packages/net/smartdns  
 # 移除 openwrt feeds 自带的核心包
-rm -rf feeds/packages/net/smartdns                           
-#{xray-core,v2ray-core,v2ray-geodata,sing-box}
+# {xray-core,v2ray-core,v2ray-geodata,sing-box}
 # git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 
 

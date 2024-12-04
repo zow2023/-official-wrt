@@ -24,8 +24,8 @@ git clone https://github.com/fullcone-nat-nftables/nft-fullcone  package/nft-ful
 # git clone https://github.com/muink/openwrt-einat-ebpf.git package/einat-ebpf
 # git clone https://github.com/muink/luci-app-einat.git package/luci-app-einat
 
-rm -rf feeds/luci/applications/luci-app-smartdns
-rm -rf feeds/packages/net/smartdns  
+#rm -rf feeds/luci/applications/luci-app-smartdns
+#rm -rf feeds/packages/net/smartdns  
 # 移除 openwrt feeds 自带的核心包
 # {xray-core,v2ray-core,v2ray-geodata,sing-box}
 # git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
@@ -41,8 +41,8 @@ rm -rf feeds/packages/net/smartdns
 # git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
 
-git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
-git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+#git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
+#git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome 
 

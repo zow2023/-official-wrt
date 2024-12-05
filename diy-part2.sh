@@ -24,10 +24,10 @@ git clone https://github.com/fullcone-nat-nftables/nft-fullcone  package/nft-ful
 # git clone https://github.com/muink/openwrt-einat-ebpf.git package/einat-ebpf
 # git clone https://github.com/muink/luci-app-einat.git package/luci-app-einat
 
-rm -rf feeds/luci/applications/luci-app-smartdns
-rm -rf feeds/packages/net/smartdns  
-git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
-git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+# rm -rf feeds/luci/applications/luci-app-smartdns
+# rm -rf feeds/packages/net/smartdns  
+# git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
+# git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 
 # 移除 openwrt feeds 自带的核心包
 # {xray-core,v2ray-core,v2ray-geodata,sing-box}
@@ -44,22 +44,24 @@ git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/lu
 # git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
 
-git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome 
+git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
+git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
 
 #git clone https://github.com/sirpdboy/luci-app-wizard package/luci-app-wizard
 #git clone https://github.com/DevOpenWRT-Router/luci-app-mqos package/luci-app-mqos   
 
 #git clone https://github.com/CrazyPegasus/luci-app-accesscontrol-plus package/luci-app-accesscontrol-plus
-git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
+
 #git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 #git clone https://github.com/sbwml/autocore-arm -b openwrt-22.03 package/autocore-arm 
 
 # git clone https://github.com/gSpotx2f/luci-app-cpu-status package/luci-app-cpu-status
 git clone https://github.com/gSpotx2f/luci-app-cpu-perf package/luci-app-cpu-perf
-# git clone https://github.com/gSpotx2f/luci-app-interfaces-statistics package/luci-app-interfaces-statistics
-git clone https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp-status
-git clone https://github.com/muink/luci-app-tinyfilemanager package/luci-app-tinyfilemanager
 git clone https://github.com/muink/luci-app-tn-netports package/luci-app-tn-netports
+git clone https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp-status
+# git clone https://github.com/gSpotx2f/luci-app-interfaces-statistics package/luci-app-interfaces-statistics
+git clone https://github.com/muink/luci-app-tinyfilemanager package/luci-app-tinyfilemanager
+
 # git clone -b main --single-branch https://github.com/lxz1104/openwrt-fullconenat package/fullconenat
 
 #git clone https://github.com/QiuSimons/luci-app-daed-next package/daed-next

@@ -24,8 +24,11 @@ git clone https://github.com/fullcone-nat-nftables/nft-fullcone  package/nft-ful
 # git clone https://github.com/muink/openwrt-einat-ebpf.git package/einat-ebpf
 # git clone https://github.com/muink/luci-app-einat.git package/luci-app-einat
 
-#rm -rf feeds/luci/applications/luci-app-smartdns
-#rm -rf feeds/packages/net/smartdns  
+rm -rf feeds/luci/applications/luci-app-smartdns
+rm -rf feeds/packages/net/smartdns  
+git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
+git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+
 # 移除 openwrt feeds 自带的核心包
 # {xray-core,v2ray-core,v2ray-geodata,sing-box}
 # git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
@@ -40,9 +43,6 @@ git clone https://github.com/fullcone-nat-nftables/nft-fullcone  package/nft-ful
 # git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
 # git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
-
-#git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
-#git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome 
 
@@ -65,7 +65,7 @@ git clone https://github.com/muink/luci-app-tn-netports package/luci-app-tn-netp
 #git clone https://github.com/QiuSimons/luci-app-daed-next package/daed-next
 
 #git clone https://github.com/sbwml/v2ray-geodata package/daed/v2ray-geodata 
-git clone https://github.com/QiuSimons/luci-app-daed package/dae     
+#git clone https://github.com/QiuSimons/luci-app-daed package/dae     
 
 #rm -rf feeds/packages/net/xray-core  
 #rm -rf feeds/packages/net/chinadns-ng 
@@ -86,7 +86,7 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
 curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
-mkdir -p Package/libcron && wget -O Package/libcron/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/libs/libcron/Makefile
+#mkdir -p Package/libcron && wget -O Package/libcron/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/libs/libcron/Makefile
 
 # Modify default IP
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate

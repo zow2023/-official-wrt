@@ -13,7 +13,7 @@
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 # git clone https://github.com/sbwml/luci-theme-argon package/luci-theme-argon
-git clone https://github.com/fullcone-nat-nftables/nft-fullcone  package/nft-fullcone
+# git clone https://github.com/fullcone-nat-nftables/nft-fullcone  package/nft-fullcone
 
 # rm -rf feeds/packages/net/natmap
 # rm -rf feeds/luci/applications/luci-app-natmap
@@ -86,10 +86,10 @@ git clone https://github.com/QiuSimons/luci-app-daed package/dae     
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 
 # Modify default IP
-sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.15.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile

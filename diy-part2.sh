@@ -54,7 +54,7 @@ git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-ad
 #git clone https://github.com/CrazyPegasus/luci-app-accesscontrol-plus package/luci-app-accesscontrol-plus
 
 #git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
-git clone https://github.com/sbwml/autocore-arm package/autocore-arm 
+#git clone https://github.com/sbwml/autocore-arm package/autocore-arm 
 
 # git clone https://github.com/gSpotx2f/luci-app-cpu-status package/luci-app-cpu-status
 git clone https://github.com/gSpotx2f/luci-app-cpu-perf package/luci-app-cpu-perf

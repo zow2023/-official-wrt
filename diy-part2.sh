@@ -30,8 +30,8 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 # git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 
 # 移除 openwrt feeds 自带的核心包
-rm -rf feeds/packages/net/{xray*,v2ray*,v2ray*,sing*}
-# rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
+# rm -rf feeds/packages/net/{xray*,v2ray*,v2ray*,sing*}
+rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
 # git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 
 
@@ -71,8 +71,8 @@ git clone https://github.com/QiuSimons/luci-app-daed package/dae     
 # rm -rf feeds/packages/net/chinadns-ng 
 # rm -rf feeds/luci/applications/luci-app-passwall
 
-# git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-# git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 
 #rm -rf feeds/package/helloworld
 #git clone https://github.com/fw876/helloworld.git -b master package/helloworld

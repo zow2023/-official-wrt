@@ -66,16 +66,15 @@ git clone https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp
 
 # git clone -b main --single-branch https://github.com/lxz1104/openwrt-fullconenat package/fullconenat
 
-
-#git clone https://github.com/sbwml/v2ray-geodata package/daed/v2ray-geodata 
+ 
 git clone https://github.com/QiuSimons/luci-app-daed package/dae     
 
   
 # rm -rf feeds/packages/net/chinadns-ng 
 # rm -rf feeds/luci/applications/luci-app-passwall
 
-git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+# git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
+# git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 
 #rm -rf feeds/package/helloworld
 #git clone https://github.com/fw876/helloworld.git -b master package/helloworld

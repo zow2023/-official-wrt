@@ -66,9 +66,7 @@ git clone https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp
 
 # git clone -b main --single-branch https://github.com/lxz1104/openwrt-fullconenat package/fullconenat
 
- 
 git clone https://github.com/QiuSimons/luci-app-daed package/dae     
-
   
 # rm -rf feeds/packages/net/chinadns-ng 
 # rm -rf feeds/luci/applications/luci-app-passwall

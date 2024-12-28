@@ -73,8 +73,8 @@ git clone https://github.com/QiuSimons/luci-app-daed package/dae     
 # rm -rf feeds/packages/net/chinadns-ng 
 # rm -rf feeds/luci/applications/luci-app-passwall
 
-git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+# git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
+# git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 
 #rm -rf feeds/package/helloworld
 #git clone https://github.com/fw876/helloworld.git -b master package/helloworld

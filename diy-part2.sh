@@ -39,14 +39,14 @@ rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
 
 # git clone https://github.com/peter-tank/openwrt-minisign.git package/minisign
 # git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
-#git clone https://github.com/kenzok78/openwrt-minisign.git package/minisign
 
 # git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
 # git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
 git clone https://github.com/QiuSimons/luci-app-daed package/dae
-
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
+git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
+
 # git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
 # git clone https://github.com/4IceG/luci-app-timecontrol package/luci-app-timecontrol
 

@@ -12,10 +12,15 @@
 #src-git telephony https://git.openwrt.org/feed/telephony.git^98c8a5aa4624312ed758e2e2b6d4039050a1649d
  
 #src-git packages https://github.com/ikghx/packages.git;openwrt-24.10
-src-git packages https://git.openwrt.org/feed/packages.git^212eb308f108b2460909b3cd25d68374913b266f
-src-git luci https://git.openwrt.org/project/luci.git^36b610767adf7172f87e89e02edc1a91af1fcb45
-src-git routing https://git.openwrt.org/feed/routing.git^e87b55c6a642947ad7e24cd5054a637df63d5dbe
-src-git telephony https://git.openwrt.org/feed/telephony.git^fd605af7143165a2490681ec1752f259873b9147
+src-git packages https://github.com/x-wrt/packages.git;25.01_b202501191038
+src-git luci https://github.com/x-wrt/luci.git;25.01_b202501191038
+src-git routing https://github.com/x-wrt/routing.git;25.01_b202501191038
+src-git telephony https://github.com/x-wrt/telephony.git;25.01_b202501191038
+src-git video https://github.com/x-wrt/video.git;25.01_b202501191038
+#src-git-full targets https://github.com/openwrt/targets.git
+#src-git-full oldpackages http://git.openwrt.org/packages.git
+#src-link custom /usr/src/openwrt/custom-feed
+src-git x https://github.com/x-wrt/com.x-wrt.git;25.01_b202501191038
 
 #src-git packages https://github.com/x-wrt/packages.git;24.04_b202412150758
 #src-git luci https://github.com/x-wrt/luci.git;24.04_b202412150758
@@ -23,13 +28,3 @@ src-git telephony https://git.openwrt.org/feed/telephony.git^fd605af7143165a2490
 #src-git telephony https://github.com/x-wrt/telephony.git;24.04_b202412150758
 #src-git x https://github.com/x-wrt/com.x-wrt.git;24.04_b202412150758
 #src-git video https://github.com/x-wrt/video.git;24.04_b202412150758
-
-# src-git packages https://github.com/x-wrt/packages.git;25.01_b202501191038
-# src-git luci https://github.com/x-wrt/luci.git;25.01_b202501191038
-# src-git routing https://github.com/x-wrt/routing.git;25.01_b202501191038
-# src-git telephony https://github.com/x-wrt/telephony.git;25.01_b202501191038
-# src-git video https://github.com/x-wrt/video.git;25.01_b202501191038
-#src-git-full targets https://github.com/openwrt/targets.git
-#src-git-full oldpackages http://git.openwrt.org/packages.git
-#src-link custom /usr/src/openwrt/custom-feed
-# src-git x https://github.com/x-wrt/com.x-wrt.git;25.01_b202501191038

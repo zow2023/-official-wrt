@@ -46,6 +46,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 git clone https://github.com/QiuSimons/luci-app-daed package/dae
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
 git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
+git clone https://github.com/remittor/zapret-openwrt package/zapret
 
 git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
 # git clone https://github.com/4IceG/luci-app-timecontrol package/luci-app-timecontrol

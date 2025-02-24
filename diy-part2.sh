@@ -12,7 +12,7 @@
  
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-git clone https://github.com/tano-systems/luci-theme-tano package/luci-theme-tano
+# git clone https://github.com/tano-systems/luci-theme-tano package/luci-theme-tano
 # git clone https://github.com/fullcone-nat-nftables/nft-fullcone  package/nft-fullcone
 
 # rm -rf feeds/packages/net/natmap
@@ -92,7 +92,7 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 # rm -rf feeds/packages/net/v2ray-geodata
 git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos
 
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
 
 # Modify default IP

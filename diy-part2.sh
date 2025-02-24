@@ -45,7 +45,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 git clone https://github.com/QiuSimons/luci-app-daed package/dae
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
 git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
-git clone https://github.com/remittor/zapret-openwrt package/zapret
+#git clone https://github.com/remittor/zapret-openwrt package/zapret
 
 git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
 # git clone https://github.com/4IceG/luci-app-timecontrol package/luci-app-timecontrol
@@ -65,7 +65,7 @@ git clone https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp
 # git clone https://github.com/gSpotx2f/luci-app-interfaces-statistics package/luci-app-interfaces-statistics
 # git clone https://github.com/muink/luci-app-tinyfilemanager package/luci-app-tinyfilemanager
 
-git clone -b main --single-branch https://github.com/lxz1104/openwrt-fullconenat package/fullconenat
+#git clone -b main --single-branch https://github.com/lxz1104/openwrt-fullconenat package/fullconenat
 
 # rm -rf feeds/packages/net/chinadns-ng 
 # rm -rf feeds/luci/applications/luci-app-passwall

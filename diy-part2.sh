@@ -31,7 +31,8 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 
 # 移除 openwrt feeds 自带的核心包
 # rm -rf feeds/packages/net/{xray*,v2ray*,v2ray*,sing*}
-# rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
+rm -rf feeds/packages/net/xray-core
+#,v2ray-core,v2ray-geodata,sing-box}
 # git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 
 #git clone https://github.com/DNSCrypt/dnscrypt-proxy.git feeds/packages/net/dnscrypt-proxy2

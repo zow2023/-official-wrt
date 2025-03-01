@@ -53,7 +53,7 @@ git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-ad
 git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
 #git clone https://github.com/remittor/zapret-openwrt package/zapret
 
-git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
+# git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
 # git clone https://github.com/4IceG/luci-app-timecontrol package/luci-app-timecontrol
 
 #git clone https://github.com/sirpdboy/luci-app-wizard package/luci-app-wizard

@@ -12,6 +12,7 @@
  
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # git clone https://github.com/tano-systems/luci-theme-tano package/luci-theme-tano
 # git clone https://github.com/fullcone-nat-nftables/nft-fullcone  package/nft-fullcone
 
@@ -34,6 +35,10 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 
 rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
 git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
+#git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
+#git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+#rm -rf feeds/package/helloworld
+#git clone https://github.com/fw876/helloworld.git -b master package/helloworld
 
 #git clone https://github.com/DNSCrypt/dnscrypt-proxy.git feeds/packages/net/dnscrypt-proxy2
 
@@ -49,7 +54,6 @@ git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
 #git clone https://github.com/remittor/zapret-openwrt package/zapret
 
 git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
-git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # git clone https://github.com/4IceG/luci-app-timecontrol package/luci-app-timecontrol
 
 #git clone https://github.com/sirpdboy/luci-app-wizard package/luci-app-wizard
@@ -64,19 +68,15 @@ git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 git clone https://github.com/gSpotx2f/luci-app-cpu-perf package/luci-app-cpu-perf
 git clone https://github.com/muink/luci-app-tn-netports package/luci-app-tn-netports
 git clone https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp-status
+git clone https://github.com/sbwml/luci-app-filemanager package/luci-app-filemanager
 # git clone https://github.com/gSpotx2f/luci-app-interfaces-statistics package/luci-app-interfaces-statistics
-git clone https://github.com/muink/luci-app-tinyfilemanager package/luci-app-tinyfilemanager
+#git clone https://github.com/muink/luci-app-tinyfilemanager package/luci-app-tinyfilemanager
 
 #git clone -b main --single-branch https://github.com/lxz1104/openwrt-fullconenat package/fullconenat
 
 # rm -rf feeds/packages/net/chinadns-ng 
 # rm -rf feeds/luci/applications/luci-app-passwall
 
-#git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-#git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
-
-#rm -rf feeds/package/helloworld
-#git clone https://github.com/fw876/helloworld.git -b master package/helloworld
 
 #rm -rf feeds/luci/applications/luci-app-mosdns
 #rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}

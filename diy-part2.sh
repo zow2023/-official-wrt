@@ -25,18 +25,20 @@ git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # git clone https://github.com/muink/openwrt-einat-ebpf.git package/einat-ebpf
 # git clone https://github.com/muink/luci-app-einat.git package/luci-app-einat
 
-rm -rf feeds/luci/applications/luci-app-smartdns
-rm -rf feeds/packages/net/smartdns  
-git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
-git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+# rm -rf feeds/luci/applications/luci-app-smartdns
+# rm -rf feeds/packages/net/smartdns  
+# git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
+# git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 
 # 移除 openwrt feeds 自带的核心包
 # rm -rf feeds/packages/net/{xray*,v2ray*,v2ray*,sing*}
 
-rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
-git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
-#git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-#git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+# rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
+# git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
+
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+
 #rm -rf feeds/package/helloworld
 #git clone https://github.com/fw876/helloworld.git -b master package/helloworld
 
@@ -51,6 +53,7 @@ git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 git clone https://github.com/QiuSimons/luci-app-daed package/dae
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
 git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
+
 #git clone https://github.com/remittor/zapret-openwrt package/zapret
 
 # git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
@@ -89,12 +92,12 @@ rm -rf feeds/packages/lang/node
 git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-24.10 feeds/packages/lang/node
 
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+git clone https://github.com/kenzok8/golang -b 1.23 feeds/packages/lang/golang
 
 # rm -rf feeds/packages/net/v2ray-geodata
 git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos
 
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
 
 # Modify default IP

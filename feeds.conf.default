@@ -10,20 +10,20 @@
 #src-git routing https://git.openwrt.org/feed/routing.git^e351d1e623e9ef2ab78f28cb1ce8d271d28c902d
 #src-git telephony https://git.openwrt.org/feed/telephony.git^98c8a5aa4624312ed758e2e2b6d4039050a1649d
 
-#src-git packages https://git.openwrt.org/feed/packages.git^201fd099b80a2931b7326ce20b0cbb824296c99f
-#src-git luci https://git.openwrt.org/project/luci.git^7b0663a5557118499dc3b3d44550efc1b6fa3feb
-#src-git routing https://git.openwrt.org/feed/routing.git^e87b55c6a642947ad7e24cd5054a637df63d5dbe
-#src-git telephony https://git.openwrt.org/feed/telephony.git^fd605af7143165a2490681ec1752f259873b9147
+src-git packages https://git.openwrt.org/feed/packages.git^201fd099b80a2931b7326ce20b0cbb824296c99f
+src-git luci https://git.openwrt.org/project/luci.git^7b0663a5557118499dc3b3d44550efc1b6fa3feb
+src-git routing https://git.openwrt.org/feed/routing.git^e87b55c6a642947ad7e24cd5054a637df63d5dbe
+src-git telephony https://git.openwrt.org/feed/telephony.git^fd605af7143165a2490681ec1752f259873b9147
 
-src-git packages https://github.com/x-wrt/packages.git;25.01_b202502130018
-src-git luci https://github.com/x-wrt/luci.git;25.01_b202502130018
-src-git routing https://github.com/x-wrt/routing.git;25.01_b202502130018
-src-git telephony https://github.com/x-wrt/telephony.git;25.01_b202502130018
-src-git video https://github.com/x-wrt/video.git;25.01_b202502130018
+#src-git packages https://github.com/x-wrt/packages.git;25.01_b202502130018
+#src-git luci https://github.com/x-wrt/luci.git;25.01_b202502130018
+#src-git routing https://github.com/x-wrt/routing.git;25.01_b202502130018
+#src-git telephony https://github.com/x-wrt/telephony.git;25.01_b202502130018
+#src-git video https://github.com/x-wrt/video.git;25.01_b202502130018
 #src-git-full targets https://github.com/openwrt/targets.git
 #src-git-full oldpackages http://git.openwrt.org/packages.git
 #src-link custom /usr/src/openwrt/custom-feed
-src-git x https://github.com/x-wrt/com.x-wrt.git;25.01_b202502130018
+#src-git x https://github.com/x-wrt/com.x-wrt.git;25.01_b202502130018
 
 #src-git packages https://github.com/x-wrt/packages.git;24.04_b202412150758
 #src-git luci https://github.com/x-wrt/luci.git;24.04_b202412150758

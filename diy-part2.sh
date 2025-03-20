@@ -33,11 +33,11 @@ git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/lu
 # 移除 openwrt feeds 自带的核心包
 # rm -rf feeds/packages/net/{xray*,v2ray*,v2ray*,sing*}
 
-#rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata}
-#git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
+rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata}
+git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 
-git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+#git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
+#git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 
 #rm -rf feeds/package/helloworld
 #git clone https://github.com/fw876/helloworld.git -b master package/helloworld
@@ -66,7 +66,7 @@ git clone https://github.com/x-wrt/com.x-wrt package/x
 #git clone https://github.com/CrazyPegasus/luci-app-accesscontrol-plus package/luci-app-accesscontrol-plus
 
 #git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
-git clone https://github.com/sbwml/autocore-arm package/autocore-arm 
+#git clone https://github.com/sbwml/autocore-arm package/autocore-arm 
 
 git clone https://github.com/gSpotx2f/luci-app-cpu-status package/luci-app-cpu-status
 git clone https://github.com/gSpotx2f/luci-app-cpu-perf package/luci-app-cpu-perf

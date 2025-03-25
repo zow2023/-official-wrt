@@ -82,9 +82,8 @@ jobs:
     - name: fix rust
       run: |  
         cd openwrt
-        sed -i 's/--set=source.crates-io.replace-with=mirror.*llvm=false/--set=llvm.download-ci-llvm=false/' \
-        package/feeds/packages/rust/Makefile
-
+        sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
+        
 
     - name: Load custom configuration
       run: |

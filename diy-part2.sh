@@ -13,6 +13,8 @@
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+git clone https://github.com/openwrt-xiaomi/xwrt-packages package/x
+
 # git clone https://github.com/tano-systems/luci-theme-tano package/luci-theme-tano
 # git clone https://github.com/fullcone-nat-nftables/nft-fullcone  package/nft-fullcone
 
@@ -25,19 +27,19 @@ git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # git clone https://github.com/muink/openwrt-einat-ebpf.git package/einat-ebpf
 # git clone https://github.com/muink/luci-app-einat.git package/luci-app-einat
 
-rm -rf feeds/luci/applications/luci-app-smartdns
-rm -rf feeds/packages/net/smartdns  
-git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
-git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+#rm -rf feeds/luci/applications/luci-app-smartdns
+#rm -rf feeds/packages/net/smartdns  
+#git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
+#git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 
 # 移除 openwrt feeds 自带的核心包
 # rm -rf feeds/packages/net/{xray*,v2ray*,v2ray*,sing*}
 
-rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
-git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
+#rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
+#git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 
-#git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-#git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 
 #rm -rf feeds/package/helloworld
 #git clone https://github.com/fw876/helloworld.git -b master package/helloworld
@@ -52,8 +54,8 @@ git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 
 git clone https://github.com/QiuSimons/luci-app-daed package/dae
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
-#git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
-git clone https://github.com/x-wrt/com.x-wrt package/x
+git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
+#git clone https://github.com/x-wrt/com.x-wrt package/x
 
 #git clone https://github.com/remittor/zapret-openwrt package/zapret
 
@@ -72,7 +74,7 @@ git clone https://github.com/gSpotx2f/luci-app-cpu-status package/luci-app-cpu-s
 git clone https://github.com/gSpotx2f/luci-app-cpu-perf package/luci-app-cpu-perf
 git clone https://github.com/muink/luci-app-tn-netports package/luci-app-tn-netports
 git clone https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp-status
-git clone https://github.com/sbwml/luci-app-filemanager package/luci-app-filemanager
+# git clone https://github.com/sbwml/luci-app-filemanager package/luci-app-filemanager
 # git clone https://github.com/gSpotx2f/luci-app-interfaces-statistics package/luci-app-interfaces-statistics
 #git clone https://github.com/muink/luci-app-tinyfilemanager package/luci-app-tinyfilemanager
 
@@ -87,10 +89,10 @@ git clone https://github.com/sbwml/luci-app-filemanager package/luci-app-fileman
 #rm -rf feeds/packages/utils/v2dat
 
 rm -rf feeds/packages/lang/node
-git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-23.05 feeds/packages/lang/node
+# git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-23.05 feeds/packages/lang/node
 
 #rm -rf feeds/packages/lang/node
-#git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-24.10 feeds/packages/lang/node
+git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-24.10 feeds/packages/lang/node
 
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang

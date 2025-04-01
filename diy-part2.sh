@@ -53,7 +53,7 @@ git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 # git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
 rm -rf feeds/luci/applications/luci-app-daed
-rm -rf feeds/packages/net/{dae,daed}
+rm -rf package/helloword/daed
 git clone https://github.com/QiuSimons/luci-app-daed package/dae
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
 git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy

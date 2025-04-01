@@ -12,7 +12,7 @@
  
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+# git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # git clone https://github.com/openwrt-xiaomi/xwrt-packages package/x
 
 # git clone https://github.com/tano-systems/luci-theme-tano package/luci-theme-tano

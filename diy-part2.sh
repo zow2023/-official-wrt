@@ -15,9 +15,6 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 #git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # git clone https://github.com/openwrt-xiaomi/xwrt-packages package/x
 
-# git clone https://github.com/tano-systems/luci-theme-tano package/luci-theme-tano
-# git clone https://github.com/fullcone-nat-nftables/nft-fullcone  package/nft-fullcone
-
 # rm -rf feeds/packages/net/natmap
 # rm -rf feeds/luci/applications/luci-app-natmap
 #git clone https://github.com/muink/openwrt-natmapt.git package/natmapt
@@ -62,15 +59,12 @@ git clone https://github.com/x-wrt/com.x-wrt package/x
 
 #git clone https://github.com/remittor/zapret-openwrt package/zapret
 
-# git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
 # git clone https://github.com/4IceG/luci-app-timecontrol package/luci-app-timecontrol
 
 #git clone https://github.com/sirpdboy/luci-app-wizard package/luci-app-wizard
-#git clone https://github.com/DevOpenWRT-Router/luci-app-mqos package/luci-app-mqos   
+#git clone https://github.com/sirpdboy/luci-app-taskplan package/luci-app-taskplan
+git clone https://github.com/sirpdboy/luci-app-timecontrol package/luci-app-timecontrol
 
-#git clone https://github.com/CrazyPegasus/luci-app-accesscontrol-plus package/luci-app-accesscontrol-plus
-
-#git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 #git clone https://github.com/sbwml/autocore-arm package/autocore-arm 
 
 git clone https://github.com/gSpotx2f/luci-app-cpu-status package/luci-app-cpu-status
@@ -82,11 +76,8 @@ git clone https://github.com/gSpotx2f/luci-app-interfaces-statistics package/luc
 # git clone https://github.com/sbwml/luci-app-filemanager package/luci-app-filemanager
 #git clone https://github.com/muink/luci-app-tinyfilemanager package/luci-app-tinyfilemanager
 
-#git clone -b main --single-branch https://github.com/lxz1104/openwrt-fullconenat package/fullconenat
-
 # rm -rf feeds/packages/net/chinadns-ng 
 # rm -rf feeds/luci/applications/luci-app-passwall
-
 
 #rm -rf feeds/luci/applications/luci-app-mosdns
 #rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}

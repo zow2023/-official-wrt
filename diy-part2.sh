@@ -12,7 +12,7 @@
  
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-#git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # git clone https://github.com/openwrt-xiaomi/xwrt-packages package/x
 
 # rm -rf feeds/packages/net/natmap
@@ -32,8 +32,8 @@ git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/lu
 # 移除 openwrt feeds 自带的核心包
 #rm -rf feeds/packages/net/{xray*,v2ray*,v2ray*,sing*}
 
-rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
-git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
+#rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
+#git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages

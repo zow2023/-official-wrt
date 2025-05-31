@@ -49,9 +49,9 @@ git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/pas
 # git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
 # git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
-rm -rf package/helloworld/luci-app-daed
-rm -rf package/helloworld/daed
-git clone https://github.com/QiuSimons/luci-app-daed package/dae
+#rm -rf package/helloworld/luci-app-daed
+#rm -rf package/helloworld/daed
+#git clone https://github.com/QiuSimons/luci-app-daed package/dae
 
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
 #git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy

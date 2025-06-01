@@ -12,7 +12,8 @@
  
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+
+#git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # git clone https://github.com/openwrt-xiaomi/xwrt-packages package/x
 
 # rm -rf feeds/packages/net/natmap
@@ -49,11 +50,12 @@ git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/pas
 # git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
 # git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
-#rm -rf package/helloworld/luci-app-daed
-#rm -rf package/helloworld/daed
-#git clone https://github.com/QiuSimons/luci-app-daed package/dae
+rm -rf package/helloworld/luci-app-daed
+rm -rf package/helloworld/daed
+git clone https://github.com/QiuSimons/luci-app-daed package/dae
 
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
+
 #git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
 #git clone https://github.com/x-wrt/com.x-wrt package/x
 
@@ -73,7 +75,7 @@ git clone https://github.com/muink/luci-app-tn-netports package/luci-app-tn-netp
 git clone https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp-status
 git clone https://github.com/gSpotx2f/luci-app-interfaces-statistics package/luci-app-interfaces-statistics
 
-# git clone https://github.com/sbwml/luci-app-filemanager package/luci-app-filemanager
+#git clone https://github.com/sbwml/luci-app-filemanager package/luci-app-filemanager
 #git clone https://github.com/muink/luci-app-tinyfilemanager package/luci-app-tinyfilemanager
 
 # rm -rf feeds/packages/net/chinadns-ng 
@@ -83,10 +85,10 @@ git clone https://github.com/gSpotx2f/luci-app-interfaces-statistics package/luc
 #rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
 #rm -rf feeds/packages/utils/v2dat
 
-rm -rf feeds/packages/lang/node
+# rm -rf feeds/packages/lang/node
 # git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-23.05 feeds/packages/lang/node
 
-#rm -rf feeds/packages/lang/node
+rm -rf feeds/packages/lang/node
 git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-24.10 feeds/packages/lang/node
 
 rm -rf feeds/packages/lang/golang

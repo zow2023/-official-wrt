@@ -36,8 +36,19 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
+    - name: Maximize build space
+      uses: easimon/maximize-build-space@master
+      with:
+        root-reserve-mb: 1024      # 根分区保留空间(MB)
+        swap-size-mb: 1024         # 交换空间大小(MB)
+        temp-reserve-mb: 100       # 临时分区保留空间(MB)
+        remove-dotnet: 'true'      # 删除.NET运行时
+        remove-android: 'true'     # 删除Android SDK
+        remove-haskell: 'true'     # 删除Haskell
+        remove-codeql: 'true'      # 删除CodeQL
+        remove-docker-images: 'true' # 删除Docker镜像
+        
     - name: Checkout
       uses: actions/checkout@main
         

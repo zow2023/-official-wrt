@@ -55,6 +55,7 @@ rm -rf package/helloworld/daed
 git clone https://github.com/QiuSimons/luci-app-daed package/dae
 
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
+git clone https://github.com/TanZhiwen2001/luci-app-adguardhome package/luci-app-adguardhome
 
 #git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
 #git clone https://github.com/x-wrt/com.x-wrt package/x
@@ -102,7 +103,7 @@ curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turbo
 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
 
 # Modify default IP
-sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.15.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile

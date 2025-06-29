@@ -101,11 +101,11 @@ git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/l
 # rm -rf feeds/packages/net/v2ray-geodata
 # git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos
 
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
 
 # Modify default IP
-sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.15.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile

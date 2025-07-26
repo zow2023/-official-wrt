@@ -21,9 +21,9 @@ on:
 
 env:
   REPO_URL: https://github.com/x-wrt/x-wrt
-  REPO_BRANCH: 25.04_b202507121539
+  REPO_BRANCH: 25.04_b202507260144
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: w6x.config
+  CONFIG_FILE: w6xapk.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -50,6 +50,7 @@ jobs:
         sudo -E apt-get -qq install build-essential clang llvm flex bison g++ gawk \
              gcc-multilib g++-multilib gettext git libelf-dev libncurses5-dev libssl-dev dos2unix dwarves quilt npm jq \
              python3-setuptools rsync swig unzip uuid-dev libblkid-dev file wget xsltproc zlib1g-dev zip zstd
+        sudo npm install -g pnpm
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"

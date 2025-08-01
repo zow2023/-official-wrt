@@ -40,12 +40,19 @@ jobs:
     steps:        
     - name: Checkout
       uses: actions/checkout@main
-        
-    - name: Initialization environment
-      env:
-        DEBIAN_FRONTEND: noninteractive
+
+    - name: 🧩 Setup Build Environment
       run: |
-        sudo docker image prune --all --force
+        echo "📁 Creating workspace at $WORKDIR"
+        mkdir -p $WORKDIR
+        echo "✅ Workspace ready: $(realpath $WORKDIR)"
+        
+    - name: 🔧 Initialize System Environment
+      run: |
+        echo "🔧 Updating package list..."
+        sudo -E apt-get -qq update
+
+        echo "📦 Installing build dependencies..."
         sudo -E apt-get -qq update
         sudo -E apt-get -qq install build-essential clang llvm flex bison g++ gawk \
              gcc-multilib g++-multilib gettext git libelf-dev libncurses5-dev libssl-dev dos2unix dwarves quilt npm jq \
@@ -54,96 +61,105 @@ jobs:
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
-        sudo mkdir -p /workdir
-        sudo chown $USER:$GROUPS /workdir
 
-    - name: 🧹 Free Up Disk Space (Optimized for OpenWrt)
+    - name: 🧹 Free Up Disk Space (Maximize /tmp)
       run: |
-        echo "🚀 Disk space before cleanup:"
-        df -h
-        
-        # 针对 OpenWrt 编译的特别清理
-        sudo rm -rf \
-        /usr/share/dotnet \
-        /opt/hostedtoolcache/CodeQL \
-        /usr/local/lib/android \
-        /opt/ghc \
-        /usr/local/.ghcup \
-        /usr/local/share/boost \
-        /usr/local/share/powershell \
-        /usr/local/lib/jvm \
-        /usr/lib/firefox \
-        /usr/lib/google-cloud-sdk \
-        /usr/share/swift \
-        /usr/share/miniconda \
-        /usr/share/az* \
-        /usr/share/gradle* \
-        /usr/share/kotlin* \
-        /usr/share/maven \
-        /usr/share/php* \
-        /usr/share/ruby* \
-        /usr/share/sbt \
-        /usr/share/apache-maven* \
-        /usr/share/rust \
-        /usr/share/virtualenv \
-        /usr/share/postgresql* \
-        /usr/share/docker* \
-        /usr/share/phantomjs \
-        /usr/share/selenium \
-        /usr/share/playwright \
-        /usr/share/pyenv
+        echo "🚀 Disk usage before cleanup:"
+        df -h /tmp
 
-        # 彻底清理 apt
-        sudo -E apt-get -y purge $(dpkg -l | grep '^rc' | awk '{print $2}')
+        echo "🗑️ Removing large unused packages..."
+        sudo rm -rf \
+          /usr/share/dotnet \
+          /opt/hostedtoolcache/CodeQL \
+          /usr/local/lib/android \
+          /opt/ghc \
+          /usr/local/.ghcup \
+          /usr/local/share/boost \
+          /usr/local/share/powershell \
+          /usr/local/lib/jvm \
+          /usr/lib/firefox \
+          /usr/lib/google-cloud-sdk \
+          /usr/share/swift \
+          /usr/share/miniconda \
+          /usr/share/az* \
+          /usr/share/gradle* \
+          /usr/share/kotlin* \
+          /usr/share/maven \
+          /usr/share/php* \
+          /usr/share/ruby* \
+          /usr/share/sbt \
+          /usr/share/apache-maven* \
+          /usr/share/rust \
+          /usr/share/virtualenv \
+          /usr/share/postgresql* \
+          /usr/share/docker* \
+          /usr/share/phantomjs \
+          /usr/share/selenium \
+          /usr/share/playwright \
+          /usr/share/pyenv
+
+        echo "🧹 Cleaning APT and logs..."
+        sudo -E apt-get -y purge $(dpkg -l | grep '^rc' | awk '{print $2}' || true)
         sudo -E apt-get -y autoremove --purge
         sudo -E apt-get -y clean
         sudo rm -rf /var/lib/apt/lists/*
-
-        # 清理日志和缓存
         sudo journalctl --vacuum-time=1s
-        sudo rm -rf /var/log/*
-        sudo rm -rf /var/cache/*
-        sudo rm -rf /tmp/*
-        sudo rm -rf /snap/*
-        
-        echo "🎉 Disk space after cleanup:"
-        df -h
+        sudo rm -rf /var/log/* /var/cache/* /tmp/* /snap/*
+
+        echo "🎉 After cleanup:"
+        df -h /tmp
     
-    - name: Clone source code
-      working-directory: /workdir
+    - name: 📦 Clone OpenWrt Source Code
       run: |
-        df -hT $PWD
+        cd $WORKDIR
+        echo "📥 Cloning OpenWrt from $REPO_URL branch $REPO_BRANCH"
         git clone $REPO_URL -b $REPO_BRANCH openwrt
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
+        echo "🔗 Creating symlink to GITHUB_WORKSPACE"
+        ln -sf $WORKDIR/openwrt $GITHUB_WORKSPACE/openwrt
+
+        echo "📊 Final disk usage:"
+        df -hT $WORKDIR
           
-    - name: Load custom feeds
+    - name: 📥 Load Custom Feeds
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
+        if [ -e "$FEEDS_CONF" ]; then
+          mv $FEEDS_CONF $WORKDIR/openwrt/feeds.conf.default
+          echo "✅ Custom feeds.conf loaded"
+        fi
+
+        if [ -e "$DIY_P1_SH" ]; then
+          chmod +x $DIY_P1_SH
+          cd $WORKDIR/openwrt
+          $GITHUB_WORKSPACE/$DIY_P1_SH
+          echo "✅ DIY Part 1 executed"
+        fi
         
     
-    - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a 
-
-    - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
-
-    #- name: fix rust
-     # run: |  
-      #  cd openwrt
-        #sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
+    - name: 🔄 Update & Install Feeds
+      run: |
+        cd $WORKDIR/openwrt
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
         
 
-    - name: Load custom configuration
+    - name: 🛠️ Load Custom Configuration
       run: |
-        [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_P2_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
+        cd $WORKDIR/openwrt
+
+        if [ -e "$CONFIG_FILE" ]; then
+          mv $GITHUB_WORKSPACE/$CONFIG_FILE .config
+          echo "✅ Configuration loaded: $CONFIG_FILE"
+        else
+          echo "⚠️  Config file '$CONFIG_FILE' not found, using default defconfig"
+          make defconfig
+        fi
+
+        if [ -e "$DIY_P2_SH" ]; then
+          chmod +x $GITHUB_WORKSPACE/$DIY_P2_SH
+          $GITHUB_WORKSPACE/$DIY_P2_SH
+          echo "✅ DIY Part 2 executed"
+        fi
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
@@ -155,7 +171,7 @@ jobs:
     - name: Download package
       id: package
       run: |
-        cd openwrt
+        cd $WORKDIR/openwrt
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
@@ -164,7 +180,7 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
-        cd openwrt
+        cd $WORKDIR/openwrt
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
         echo "::set-output name=status::success"

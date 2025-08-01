@@ -45,7 +45,7 @@ jobs:
     - name: 🧩 Setup Build Environment
       run: |
         echo "📁 Creating workspace at $WORKDIR"
-        mkdir -p $WORKDIR
+        mkdir -p "$WORKDIR"
         echo "✅ Workspace ready: $(realpath $WORKDIR)"
         
     - name: 🔧 Initialize System Environment
@@ -112,6 +112,7 @@ jobs:
     
     - name: 📦 Clone OpenWrt Source Code
       run: |
+        mkdir -p "$WORKDIR"
         cd $WORKDIR
         echo "📥 Cloning OpenWrt from $REPO_URL branch $REPO_BRANCH"
         git clone $REPO_URL -b $REPO_BRANCH openwrt
@@ -131,6 +132,7 @@ jobs:
 
         if [ -e "$DIY_P1_SH" ]; then
           chmod +x $DIY_P1_SH
+          mkdir -p "$WORKDIR"
           cd $WORKDIR/openwrt
           $GITHUB_WORKSPACE/$DIY_P1_SH
           echo "✅ DIY Part 1 executed"
@@ -139,6 +141,7 @@ jobs:
     
     - name: 🔄 Update & Install Feeds
       run: |
+        mkdir -p "$WORKDIR"
         cd $WORKDIR/openwrt
         ./scripts/feeds update -a
         ./scripts/feeds install -a
@@ -146,6 +149,7 @@ jobs:
 
     - name: 🛠️ Load Custom Configuration
       run: |
+        mkdir -p "$WORKDIR"
         cd $WORKDIR/openwrt
 
         if [ -e "$CONFIG_FILE" ]; then
@@ -172,6 +176,7 @@ jobs:
     - name: Download package
       id: package
       run: |
+        mkdir -p "$WORKDIR"
         cd $WORKDIR/openwrt
         make defconfig
         make download -j8
@@ -181,6 +186,7 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
+        mkdir -p "$WORKDIR"
         cd $WORKDIR/openwrt
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s

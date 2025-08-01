@@ -20,6 +20,7 @@ on:
         default: 'false'
 
 env:
+  WORKDIR: /tmp/openwrt-build
   REPO_URL: https://github.com/zow2023/PCODE
   REPO_BRANCH: v6129
   FEEDS_CONF: feeds.conf.default

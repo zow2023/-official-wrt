@@ -36,6 +36,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
+    - name: Free disk space
+      uses: sbwml/actions@free-disk
+      with:
+        build-mount-path: /builder
+
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive

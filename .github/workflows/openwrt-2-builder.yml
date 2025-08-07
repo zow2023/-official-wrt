@@ -26,230 +26,261 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    # ⚠️ 关键：使用更大磁盘的 runner（GitHub Actions 默认 ~14GB，但可清理到 20GB+ 可用）
     steps:
     - name: Checkout
-      uses: actions/checkout@main
-        
-    - name: 🧹 Initial Cleanup & Setup (Optimized)
-      env:
-        DEBIAN_FRONTEND: noninteractive
+      uses: actions/checkout@v4
+
+    - name: 🧹 Maximize Disk Space (Early & Aggressive Cleanup)
       run: |
-        echo "=== Initial Disk Space ==="
+        echo "🚀 Initial Disk Usage"
         df -h
-        
-        # 清理Docker和系统缓存
-        sudo docker system prune -a -f
-        sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
-        
-        # 安装最小化编译依赖
-        sudo -E apt-get -qq update
-        sudo -E apt-get -qq install build-essential clang llvm flex bison g++ gawk \
-             gcc-multilib g++-multilib gettext git libelf-dev libncurses5-dev libssl-dev dos2unix dwarves quilt npm jq \
-             python3-setuptools rsync swig unzip uuid-dev libblkid-dev file wget xsltproc zlib1g-dev zip zstd
+
+        # 🔥 激进清理（移除几乎所有非必要的预装软件）
+        sudo rm -rf \
+          /usr/share/dotnet \
+          /opt/hostedtoolcache/CodeQL \
+          /usr/local/lib/android \
+          /opt/ghc \
+          /usr/local/.ghcup \
+          /usr/local/share/boost \
+          /usr/share/powershell \
+          /usr/lib/jvm \
+          /usr/lib/firefox \
+          /usr/share/google-cloud-sdk \
+          /usr/share/swift \
+          /usr/share/miniconda \
+          /usr/share/az* \
+          /usr/share/gradle* \
+          /usr/share/kotlin* \
+          /usr/share/maven \
+          /usr/share/php* \
+          /usr/share/ruby* \
+          /usr/share/sbt \
+          /usr/share/apache-maven* \
+          /usr/share/rust \
+          /usr/share/virtualenv \
+          /usr/share/postgresql* \
+          /usr/share/docker* \
+          /usr/share/phantomjs \
+          /usr/share/selenium \
+          /usr/share/playwright \
+          /usr/share/pyenv \
+          /opt/pipx \
+          /usr/local/share/chromium
+
+        # 清理 APT 缓存
+        sudo apt-get purge -y $(dpkg -l | grep '^rc' | awk '{print $2}')
+        sudo apt-get autoremove -y --purge
+        sudo apt-get clean
+        sudo rm -rf /var/lib/apt/lists/* /var/cache/* /tmp/* /var/log/*
+
+        # journal 日志
+        sudo journalctl --vacuum-time=1s
+
+        echo "🎉 After Cleanup - Max Free Space"
+        df -h
+
+    - name: Install Minimal Build Dependencies
+      run: |
+        sudo apt-get update -qq
+        sudo apt-get install -y --no-install-recommends \
+          build-essential clang llvm flex bison g++ gawk gcc-multilib g++-multilib \
+          gettext git libelf-dev libncurses5-dev libssl-dev dos2unix dwarves quilt \
+          python3-setuptools rsync swig unzip uuid-dev libblkid-dev file wget \
+          xsltproc zlib1g-dev zip zstd bc ccache
         sudo npm install -g pnpm
-        
-        # 彻底清理系统
-        sudo -E apt-get -y autoremove --purge
-        sudo -E apt-get clean
-        sudo rm -rf /var/lib/apt/lists/*
-        sudo rm -rf /var/cache/* /var/log/* /tmp/*
-        
-        # 设置工作目录
-        sudo mkdir -p /workdir
-        sudo chown $USER:$GROUPS /workdir
-        sudo timedatectl set-timezone "$TZ"
-        
-        echo "=== Disk Space After Initial Cleanup ==="
-        df -h
-    
-    - name: Clone source code
+
+        # 启用 ccache（显著加速重复编译）
+        CCACHE_DIR="/ccache"
+        mkdir -p $CCACHE_DIR
+        echo "CCACHE_DIR=$CCACHE_DIR" >> $GITHUB_ENV
+        echo "::add-path::$CCACHE_DIR"
+
+    - name: Clone Source Code
       working-directory: /workdir
       run: |
-        echo "=== Disk Space Before Clone ==="
-        df -h
-        git clone --depth=1 $REPO_URL -b $REPO_BRANCH openwrt
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-        echo "=== Disk Space After Clone ==="
-        df -h
-          
-    - name: Load custom feeds
+        git clone --depth=1 "$REPO_URL" -b "$REPO_BRANCH" openwrt
+        ln -sf /workdir/openwrt "$GITHUB_WORKSPACE/openwrt"
+        df -h  # 查看克隆后空间
+
+    - name: Load Custom Feeds & Config
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
+        [ -e "$FEEDS_CONF" ] && mv "$FEEDS_CONF" openwrt/feeds.conf.default
+        [ -e files ] && mv files openwrt/files
+        [ -e "$CONFIG_FILE" ] && mv "$CONFIG_FILE" openwrt/.config
+
+        chmod +x "$DIY_P1_SH" "$DIY_P2_SH"
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
-    
-    - name: Update feeds
+        "$GITHUB_WORKSPACE/$DIY_P1_SH"
+        "$GITHUB_WORKSPACE/$DIY_P2_SH"
+
+    - name: Update & Install Feeds
       run: |
         cd openwrt
-        echo "=== Disk Space Before Feeds Update ==="
-        df -h
         ./scripts/feeds update -a
-        echo "=== Disk Space After Feeds Update ==="
-        df -h
+        ./scripts/feeds install -a -f
 
-    - name: Install feeds
+    - name: Patch Rust (disable LLVM download)
       run: |
-        cd openwrt
-        echo "=== Disk Space Before Feeds Install ==="
-        df -h
-        ./scripts/feeds install -a --force
-        echo "=== Disk Space After Feeds Install ==="
-        df -h
-
-    - name: fix rust
-      run: |  
         cd openwrt
         sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
 
-    - name: Fix PKG_HASH for daed package
-      run: |
-        DAED_MAKEFILE="package/dae/daed/Makefile"
-        
-        # 确保文件存在
-        if [ ! -f "$DAED_MAKEFILE" ]; then
-          echo "Error: $DAED_MAKEFILE not found!"
-          exit 1
-        fi
-
-        # 使用 sed 替换或添加 PKG_HASH
-        if grep -q "^PKG_HASH:" "$DAED_MAKEFILE"; then
-          # 如果已存在 PKG_HASH 行，替换它
-          sed -i 's|^\(PKG_HASH[:?]*=\).*|\16ee3f5a23b307504e18028406b1f6bfc70835b6a1655a4bf9fe3bef39062545a|' "$DAED_MAKEFILE"
-        else
-          # 如果不存在，插入到 PKG_NAME 之后或文件末尾
-          sed -i '/^PKG_NAME/a PKG_HASH:=6ee3f5a23b307504e18028406b1f6bfc70835b6a1655a4bf9fe3bef39062545a' "$DAED_MAKEFILE"
-        fi
-
-        echo "✅ Fixed PKG_HASH in $DAED_MAKEFILE"
-        grep "PKG_HASH" "$DAED_MAKEFILE"
-
-        
-    - name: Load custom configuration
-      run: |
-        [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_P2_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
-    
-    - name: SSH connection to Actions
+    - name: SSH Debug (Optional)
       uses: P3TERX/ssh2actions@v1.0.0
-      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
+      if: inputs.ssh == 'true'
       env:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-                
-    - name: Download package
-      id: package
+
+    - name: 🚀 Download & Pre-build Cleanup
       run: |
         cd openwrt
         make defconfig
-        echo "=== Disk Space Before Download ==="
-        df -h
+
+        # ⏳ 并行下载，失败后降级
         make download -j$(nproc) || make download -j1
-        find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
-        echo "=== Disk Space After Download ==="
+
+        # 删除小文件（损坏/空下载）
+        find dl -type f -size -1024c -delete
+
+        # 🔽 编译前再次清理（关键！）
+        echo "🧹 Cleaning before compile..."
         df -h
-    
-    - name: Compile the firmware
-      id: compile
+        sudo rm -rf /workdir/openwrt/build_dir/download  # 已下载源码包缓存（后续不需要）
+        sudo rm -rf /workdir/openwrt/staging_dir/host  # 部分工具链缓存可删
+        df -h
+
+    - name: 🔧 Compile Firmware (Optimized)
       run: |
         cd openwrt
-        echo "=== Disk Space Before Compile ==="
-        df -h
-        echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make -j1 || make -j1 V=s
-        echo "::set-output name=status::success"
-        grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
-        [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
-        echo "FILE_DATE=_$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
-        echo "=== Disk Space After Compile ==="
-        df -h
-    
-    - name: Post-build cleanup
+        echo "::group::Build Log"
+        echo -e "Using $(nproc) threads with ccache"
+        export CCACHE_DIR="$CCACHE_DIR"
+        export CCACHE_TEMPDIR="/tmp"
+
+        # 使用 -j1 V=s 保留详细日志用于调试
+        make -j$(nproc) || make -j1 V=s
+        echo "::endgroup::"
+
+        # ✅ 检查是否生成固件
+        if [ ! -d "bin/targets" ] || [ -z "$(find bin/targets -name "*.bin" -type f)" ]; then
+          echo "::error::No firmware generated! Build likely failed."
+          exit 1
+        fi
+
+        # 提取设备名
+        DEVICE_NAME=$(grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' | head -1)
+        if [ -n "$DEVICE_NAME" ]; then
+          echo "DEVICE_NAME=_$DEVICE_NAME" >> $GITHUB_ENV
+        fi
+        echo "FILE_DATE=_$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+
+    - name: 🧼 Post-Build Cleanup (Free Space for Upload)
       run: |
-        echo "=== Final Disk Space Before Cleanup ==="
-        df -h
-        sudo rm -rf /workdir/openwrt/build_dir/*/linux-* /workdir/openwrt/build_dir/*/toolchain-*
-        sudo rm -rf /workdir/openwrt/staging_dir/*/toolchain-*
-        sudo apt-get clean
-        sudo rm -rf /var/cache/* /tmp/*
-        echo "=== Final Disk Space After Cleanup ==="
+        echo "🧹 Final cleanup before upload"
         df -h
 
-    - name: Upload bin directory
-      uses: actions/upload-artifact@main
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
-      with:
-        name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: openwrt/bin
+        # 删除中间文件（占空间最大）
+        sudo rm -rf /workdir/openwrt/build_dir/target* /workdir/openwrt/staging_dir/target*
+        sudo rm -rf /workdir/openwrt/build_dir/toolchain* /workdir/openwrt/staging_dir/toolchain*
+        sudo rm -rf /workdir/openwrt/tmp
 
-    - name: Organize files
+        # 保留固件即可
+        df -h
+
+    - name: 📂 Organize Firmware (Fix Wildcard cd)
       id: organize
-      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
+      if: env.UPLOAD_FIRMWARE == 'true' && success()
       run: |
-        cd openwrt/bin/targets/*/*
-        rm -rf packages
+        cd openwrt || exit 1
+
+        # 使用 OpenWrt 内建命令获取目标路径
+        TARGET_DIR=$(make target-dir V=0 2>/dev/null)
+        if [ -z "$TARGET_DIR" ]; then
+          echo "::error::Failed to get target directory. Is .config valid?"
+          ls -la bin/targets/
+          exit 1
+        fi
+
+        FIRMWARE_PATH="bin/targets/$TARGET_DIR"
+        if [ ! -d "$FIRMWARE_PATH" ]; then
+          echo "::error::Firmware directory not found: $FIRMWARE_PATH"
+          exit 1
+        fi
+
+        cd "$FIRMWARE_PATH"
+        rm -rf packages  # 删除包目录节省上传体积
+
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
+        echo "::notice::Firmware ready at $PWD"
 
-    - name: Upload firmware directory
-      uses: actions/upload-artifact@main
-      if: steps.organize.outputs.status == 'success' && !cancelled()
+    - name: 📤 Upload Firmware Artifact
+      uses: actions/upload-artifact@v4
+      if: steps.organize.outputs.status == 'success'
       with:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
+        if-no-files-found: warn
 
-    - name: Upload firmware to cowtransfer
-      id: cowtransfer
-      if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
+    - name: 📤 Upload Full Bin (Optional)
+      uses: actions/upload-artifact@v4
+      if: env.UPLOAD_BIN_DIR == 'true'
+      with:
+        name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        path: openwrt/bin/
+        retention-days: 3
+
+    - name: 🌐 Upload to Cowtransfer
+      if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true'
       run: |
         curl -fsSL git.io/file-transfer | sh
-        ./transfer cow --block 2621440 -s -p 64 --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log
-        echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
-        echo "::set-output name=url::$(cat cowtransfer.log | grep https | cut -f3 -d" ")"
+        ./transfer cow --block 2621440 -p 64 --no-progress "$FIRMWARE" | tee cow.log
+        url=$(grep https cow.log | awk '{print $3}')
+        echo "::warning title=Cowtransfer::$url"
+        echo "COW_URL=$url" >> $GITHUB_ENV
 
-    - name: Upload firmware to WeTransfer
-      id: wetransfer
-      if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
+    - name: 🌐 Upload to WeTransfer
+      if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true'
       run: |
         curl -fsSL git.io/file-transfer | sh
-        ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
-        echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
-        echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
+        ./transfer wet -p 16 --no-progress "$FIRMWARE" | tee wet.log
+        url=$(grep https wet.log | awk '{print $3}')
+        echo "::warning title=WeTransfer::$url"
+        echo "WET_URL=$url" >> $GITHUB_ENV
 
-    - name: Generate release tag
+    - name: 🏷️ Generate Release Tag
       id: tag
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      if: env.UPLOAD_RELEASE == 'true'
       run: |
-        echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
-        touch release.txt
-        [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
-        [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
-        echo "::set-output name=status::success"
+        tag="openwrt-$(date +%Y.%m.%d-%H%M)"
+        echo "release_tag=$tag" >> $GITHUB_OUTPUT
+        {
+          echo "📅 Built at $(date)"
+          [ -n "$COW_URL" ] && echo "🔗 [Cowtransfer]($COW_URL)"
+          [ -n "$WET_URL" ] && echo "🔗 [WeTransfer]($WET_URL)"
+        } > release.txt
 
-    - name: Upload firmware to release
+    - name: 📦 Publish GitHub Release
       uses: softprops/action-gh-release@v1
-      if: steps.tag.outputs.status == 'success' && !cancelled()
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      if: steps.tag.outputs.release_tag && success()
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Delete workflow runs
-      uses: GitRML/delete-workflow-runs@main
+    - name: 🧹 Cleanup Workflow Runs
+      uses: GitRML/delete-workflow-runs@v2
       with:
         retain_days: 1
         keep_minimum_runs: 3
 
-    - name: Remove old Releases
+    - name: 🗑️ Delete Old Releases
+      if: env.UPLOAD_RELEASE == 'true'
       uses: dev-drprasad/delete-older-releases@v0.1.0
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         keep_latest: 3
         delete_tags: true

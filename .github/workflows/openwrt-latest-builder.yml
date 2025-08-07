@@ -152,18 +152,11 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
-    - name: Patch download.mk to support 'skip'
-      run: |
-        cd openwrt
-        sed -i 's/filter-out x/filter-out x skip/' include/download.mk      
-
-    - name: Fix shadowsocksr-libev hash mismatch
-      run: |
-        sed -i 's/PKG_HASH:=34308ed827a5dd4f4e35619914102d55b00604faa44fda051d1d25fb4a319325/PKG_HASH:=146fa4511a52da2aaa1e11ea0294cfb450e62643156c5da3b10e037ef43961f6/g' \
-           openwrt-passwall-packages/shadowsocksr-libev/Makefile
-
-        sed -i 's/MIRROR_HASH:=34308ed827a5dd4f4e35619914102d55b00604faa44fda051d1d25fb4a319325/MIRROR_HASH:=146fa4511a52da2aaa1e11ea0294cfb450e62643156c5da3b10e037ef43961f6/g' \
-           openwrt-passwall-packages/shadowsocksr-libev/Makefile    
+    #- name: Patch download.mk to support 'skip'
+     # run: |
+      #  cd openwrt
+       # sed -i 's/filter-out x/filter-out x skip/' include/download.mk      
+  
                 
     - name: Download package
       id: package

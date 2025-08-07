@@ -273,7 +273,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: 🧹 Cleanup Workflow Runs
-      uses: GitRML/delete-workflow-runs@mian
+      uses: ActionsRML/delete-workflow-runs@main
       with:
         retain_days: 1
         keep_minimum_runs: 3

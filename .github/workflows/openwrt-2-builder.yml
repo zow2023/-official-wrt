@@ -101,6 +101,29 @@ jobs:
       run: |  
         cd openwrt
         sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
+
+    - name: Fix PKG_HASH for daed package
+      run: |
+        DAED_MAKEFILE="package/dae/daed/Makefile"
+        
+        # 确保文件存在
+        if [ ! -f "$DAED_MAKEFILE" ]; then
+          echo "Error: $DAED_MAKEFILE not found!"
+          exit 1
+        fi
+
+        # 使用 sed 替换或添加 PKG_HASH
+        if grep -q "^PKG_HASH:" "$DAED_MAKEFILE"; then
+          # 如果已存在 PKG_HASH 行，替换它
+          sed -i 's|^\(PKG_HASH[:?]*=\).*|\16ee3f5a23b307504e18028406b1f6bfc70835b6a1655a4bf9fe3bef39062545a|' "$DAED_MAKEFILE"
+        else
+          # 如果不存在，插入到 PKG_NAME 之后或文件末尾
+          sed -i '/^PKG_NAME/a PKG_HASH:=6ee3f5a23b307504e18028406b1f6bfc70835b6a1655a4bf9fe3bef39062545a' "$DAED_MAKEFILE"
+        fi
+
+        echo "✅ Fixed PKG_HASH in $DAED_MAKEFILE"
+        grep "PKG_HASH" "$DAED_MAKEFILE"
+
         
     - name: Load custom configuration
       run: |

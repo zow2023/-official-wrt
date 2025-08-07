@@ -135,7 +135,7 @@ jobs:
       run: |  
         cd openwrt
         sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
-        mkdir -p Package/libcron && wget -O Package/libcron/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/libs/libcron/Makefile
+        
 
     - name: Load custom configuration
       run: |
@@ -160,10 +160,10 @@ jobs:
     - name: Fix shadowsocksr-libev hash mismatch
       run: |
         sed -i 's/PKG_HASH:=34308ed827a5dd4f4e35619914102d55b00604faa44fda051d1d25fb4a319325/PKG_HASH:=146fa4511a52da2aaa1e11ea0294cfb450e62643156c5da3b10e037ef43961f6/g' \
-           package/passwall/packages/shadowsocksr-libev/Makefile
+           openwrt-passwall-packages/shadowsocksr-libev/Makefile
 
         sed -i 's/MIRROR_HASH:=34308ed827a5dd4f4e35619914102d55b00604faa44fda051d1d25fb4a319325/MIRROR_HASH:=146fa4511a52da2aaa1e11ea0294cfb450e62643156c5da3b10e037ef43961f6/g' \
-           package/passwall/packages/shadowsocksr-libev/Makefile    
+           openwrt-passwall-packages/shadowsocksr-libev/Makefile    
                 
     - name: Download package
       id: package

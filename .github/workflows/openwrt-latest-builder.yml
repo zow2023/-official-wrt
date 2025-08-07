@@ -151,6 +151,11 @@ jobs:
       env:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+
+    - name: Patch download.mk to support 'skip'
+      run: |
+        cd openwrt
+        sed -i 's/filter-out x/filter-out x skip/' include/download.mk        
                 
     - name: Download package
       id: package

@@ -154,10 +154,11 @@ jobs:
 
     - name: Override daed download logic
       run: |
+       cd openwrt
        echo 'define Download/daed
        $(SCRIPT_DIR)/download.pl "$(DL_DIR)" "$(FILE)" "skip" "" || \
        ( $(3) )
-       endef' >> package/daed/Makefile     
+       endef' >> package/dae/daed/Makefile     
   
                 
     - name: Download package

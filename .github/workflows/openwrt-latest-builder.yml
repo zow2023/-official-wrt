@@ -127,9 +127,8 @@ jobs:
     - name: Add libcron package
       run: |
         cd openwrt
-        cd package/libs && \
-        mkdir -p libcron && \
-        wget -O libcron/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/libs/libcron/Makefile
+        mkdir -p Package/libcron && \
+        wget -O Package/libcron/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/libs/libcron/Makefile
     
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a 

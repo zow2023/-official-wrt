@@ -152,10 +152,12 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
-    - name: Patch download.mk to support 'skip'
+    - name: Override daed download logic
       run: |
-        cd openwrt
-        sed -i 's/filter-out x/filter-out x skip/' include/download.mk      
+        echo 'define Download/daed
+        $(SCRIPT_DIR)/download.pl "$(DL_DIR)" "$(FILE)" "skip" "" || \
+        ( $(3) )
+        endef' >> package/dae/daed/Makefile      
   
                 
     - name: Download package

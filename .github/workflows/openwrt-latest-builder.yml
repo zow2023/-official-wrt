@@ -123,6 +123,12 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
+
+    - name: Add libcron package
+      run: |
+        cd openwrt
+        mkdir -p Package/libs/libcron
+        wget -O Package/libs/libcron/Makefile https://raw.githubusercontent.com/immortalwrt/packages/master/libs/libcron/Makefile
         
     
     - name: Update feeds

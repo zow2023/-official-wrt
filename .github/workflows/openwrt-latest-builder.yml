@@ -136,13 +136,6 @@ jobs:
         cd openwrt
         sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
 
-    - name: Override daed download logic
-      run: |
-       cd openwrt
-       echo 'define Download/daed
-       $(SCRIPT_DIR)/download.pl "$(DL_DIR)" "$(FILE)" "skip" "" || \
-       ( $(3) )
-       endef' >> package/dae/daed/Makefile
 
     - name: Load custom configuration
       run: |

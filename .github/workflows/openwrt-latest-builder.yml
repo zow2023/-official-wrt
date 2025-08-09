@@ -152,11 +152,12 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
-    - name: Patch download.mk for daed only
+    - name: Override daed download logic
       run: |
-        sed -i '/\$(SCRIPT_DIR)\/download.pl "\$(DL_DIR)" "\$(FILE)"/ { 
-        /daed/ s/filter-out x/filter-out x skip/ 
-        }' include/download.mk      
+       echo 'define Download/daed
+       $(SCRIPT_DIR)/download.pl "$(DL_DIR)" "$(FILE)" "skip" "" || \
+       ( $(3) )
+       endef' >> package/daed/Makefile     
   
                 
     - name: Download package

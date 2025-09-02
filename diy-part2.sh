@@ -35,12 +35,12 @@ git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/lu
 
 rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardhome}
 
-#git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-#git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 
 #git clone https://github.com/zow2023/luci-app-daed package/dae
 git clone https://github.com/QiuSimons/luci-app-daed package/dae
-git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
+#git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 #rm -rf package/helloworld/luci-app-daed
 #rm -rf package/helloworld/daed
 
@@ -94,7 +94,7 @@ rm -rf feeds/packages/lang/node
 git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-24.10 feeds/packages/lang/node
 
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
 
 #git clone https://github.com/kenzok8/golang -b 1.23 feeds/packages/lang/golang
 

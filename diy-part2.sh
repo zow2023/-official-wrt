@@ -35,13 +35,14 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 
 rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardhome}
 
-#git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-#git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 
-git clone https://github.com/zow2023/luci-app-daed package/dae
-git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
-rm -rf package/helloworld/luci-app-daed
-rm -rf package/helloworld/daed
+#git clone https://github.com/zow2023/luci-app-daed package/dae
+git clone https://github.com/QiuSimons/luci-app-daed package/dae
+#git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
+#rm -rf package/helloworld/luci-app-daed
+#rm -rf package/helloworld/daed
 
 
 #git clone https://github.com/DNSCrypt/dnscrypt-proxy.git feeds/packages/net/dnscrypt-proxy2
@@ -100,14 +101,14 @@ git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/l
 # rm -rf feeds/packages/net/v2ray-geodata
 # git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos
 
-#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
 
 # Modify default IP
-sed -i 's/192.168.15.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # Modify hostname
-sed -i 's/OpenWrt/W6WRT/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/JWRT/g' package/base-files/files/bin/config_generate

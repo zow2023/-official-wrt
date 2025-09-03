@@ -101,7 +101,7 @@ git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/l
 # rm -rf feeds/packages/net/v2ray-geodata
 # git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos
 
-#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
 
 # Modify default IP

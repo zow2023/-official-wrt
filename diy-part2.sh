@@ -38,14 +38,13 @@ rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardho
 #git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
 #git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 
-git clone https://github.com/zow2023/luci-app-dae package/dae
 
 #git clone https://github.com/QiuSimons/luci-app-dae package/dae
 #git clone https://github.com/QiuSimons/luci-app-daed package/dae
 
 git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
-rm -rf package/helloworld/luci-app-daed
-rm -rf package/helloworld/daed
+#rm -rf package/helloworld/luci-app-daed
+#rm -rf package/helloworld/daed
 
 
 #git clone https://github.com/DNSCrypt/dnscrypt-proxy.git feeds/packages/net/dnscrypt-proxy2

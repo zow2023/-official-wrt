@@ -19,7 +19,6 @@
 # rm -rf feeds/packages/net/natmap
 # rm -rf feeds/luci/applications/luci-app-natmap
 #git clone https://github.com/muink/openwrt-natmapt.git package/natmapt
-#git clone https://github.com/muink/openwrt-stuntman.git package/stuntman
 #git clone https://github.com/muink/luci-app-natmapt.git package/luci-app-natmapt
 
 # git clone https://github.com/muink/openwrt-einat-ebpf.git package/einat-ebpf
@@ -52,8 +51,6 @@ git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 # git clone https://github.com/peter-tank/openwrt-minisign.git package/minisign
 # git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
 
-# git clone https://github.com/izilzty/openwrt-chinadns-ng.git package/chinadns-ng
-# git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/luci-app-chinadns-ng
 
 #git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
 
@@ -66,8 +63,6 @@ git clone https://github.com/TanZhiwen2001/luci-app-adguardhome package/luci-app
 
 # git clone https://github.com/4IceG/luci-app-timecontrol package/luci-app-timecontrol
 
-#git clone https://github.com/sirpdboy/luci-app-wizard package/luci-app-wizard
-#git clone https://github.com/sirpdboy/luci-app-taskplan package/luci-app-taskplan
 git clone https://github.com/sirpdboy/luci-app-timecontrol package/luci-app-timecontrol
 
 #git clone https://github.com/sbwml/autocore-arm package/autocore-arm 

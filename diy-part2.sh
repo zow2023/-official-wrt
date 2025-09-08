@@ -32,7 +32,7 @@
 # 移除 openwrt feeds 自带的核心包
 #rm -rf feeds/packages/net/{xray*,v2ray*,v2ray*,sing*}
 
-rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardhome}
+#rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardhome}
 
 #git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
 #git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
@@ -54,7 +54,7 @@ git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 
 #git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
 
-git clone https://github.com/TanZhiwen2001/luci-app-adguardhome package/luci-app-adguardhome
+#git clone https://github.com/TanZhiwen2001/luci-app-adguardhome package/luci-app-adguardhome
 
 #git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
 #git clone https://github.com/x-wrt/com.x-wrt package/x

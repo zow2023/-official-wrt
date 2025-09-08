@@ -39,7 +39,7 @@
 
 
 #git clone https://github.com/QiuSimons/luci-app-dae package/dae
-#git clone https://github.com/QiuSimons/luci-app-daed package/dae
+git clone https://github.com/QiuSimons/luci-app-daed package/dae
 
 git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 #rm -rf package/helloworld/luci-app-daed

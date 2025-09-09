@@ -11,10 +11,12 @@
 #src-git routing https://git.openwrt.org/feed/routing.git^e351d1e623e9ef2ab78f28cb1ce8d271d28c902d
 #src-git telephony https://git.openwrt.org/feed/telephony.git^98c8a5aa4624312ed758e2e2b6d4039050a1649d
 
-src-git packages https://github.com/ikghx/packages.git;openwrt-24.10
-src-git luci https://github.com/ikghx/luci.git;openwrt-24.10
-src-git routing https://github.com/ikghx/routing.git;openwrt-24.10
-#src-git telephony https://git.openwrt.org/feed/telephony.git;openwrt-24.10
+src-git packages https://github.com/Lienol/openwrt-packages.git;24.10
+src-git luci https://github.com/Lienol/openwrt-luci.git;24.10
+src-git routing https://github.com/openwrt/routing.git;openwrt-24.10
+src-git telephony https://github.com/openwrt/telephony.git;openwrt-24.10
+src-git lienol https://github.com/Lienol/openwrt-package.git;main
+src-git other https://github.com/Lienol/openwrt-package.git;other
 
 #src-git packages https://github.com/x-wrt/packages.git;25.04_b202505092304
 #src-git luci https://github.com/x-wrt/luci.git;25.04_b202505092304

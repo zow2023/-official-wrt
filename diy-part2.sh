@@ -52,8 +52,8 @@ git clone https://github.com/QiuSimons/luci-app-daed package/dae
 # git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
 
 
-git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
-
+#git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
+git clone https://github.com/w9315273/luci-app-adguardhome package/luci-app-adguardhome
 #git clone https://github.com/TanZhiwen2001/luci-app-adguardhome package/luci-app-adguardhome
 
 #git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy

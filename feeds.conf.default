@@ -15,13 +15,3 @@ src-git packages https://git.openwrt.org/feed/packages.git^f1470815f41fe199bfdaf
 src-git luci https://git.openwrt.org/project/luci.git^75e41cba5160281b2d1dca922719efef29f7ffd8
 src-git routing https://git.openwrt.org/feed/routing.git^3eb59e9471858c83891979793f1dd29cca156919
 src-git telephony https://git.openwrt.org/feed/telephony.git^2a4541d46199ac96fac214d02c908402831c4dc6
-
-#src-git packages https://github.com/x-wrt/packages.git;25.04_b202505092304
-#src-git luci https://github.com/x-wrt/luci.git;25.04_b202505092304
-#src-git routing https://github.com/x-wrt/routing.git;25.04_b202505092304
-#src-git telephony https://github.com/x-wrt/telephony.git;25.04_b202505092304
-#src-git video https://github.com/x-wrt/video.git;25.04_b202505092304
-#src-git-full targets https://github.com/openwrt/targets.git
-#src-git-full oldpackages http://git.openwrt.org/packages.git
-#src-link custom /usr/src/openwrt/custom-feed
-#src-git x https://github.com/x-wrt/com.x-wrt.git;25.04_b202505092304

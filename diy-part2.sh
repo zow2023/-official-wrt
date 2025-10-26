@@ -34,8 +34,8 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 
 rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardhome}
 
-git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+#git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
+#git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 
 
 #git clone https://github.com/QiuSimons/luci-app-dae package/dae
@@ -56,7 +56,7 @@ git clone https://github.com/QiuSimons/luci-app-daed package/dae
 git clone https://github.com/w9315273/luci-app-adguardhome package/luci-app-adguardhome
 #git clone https://github.com/TanZhiwen2001/luci-app-adguardhome package/luci-app-adguardhome
 
-#git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
+git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
 #git clone https://github.com/x-wrt/com.x-wrt package/x
 
 #git clone https://github.com/remittor/zapret-openwrt package/zapret

@@ -36,10 +36,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
-    - name: Free disk space
-      uses: sbwml/actions@free-disk
-      with:
-        build-mount-path: /builder
+    - name: Optimize disk for OpenWrt build
+      run: |
+        sudo apt-get clean
+        sudo apt-get autoremove -y
+        sudo journalctl --vacuum-time=1d 
+        sudo rm -rf /tmp/* /var/tmp/*
+        git gc --aggressive --prune=now
+        echo "Disk space after cleanup:"
+        df -h
 
     - name: Initialization environment
       env:

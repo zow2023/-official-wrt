@@ -37,11 +37,10 @@ git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/lu
 #git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
 #git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 
-
-git clone https://github.com/QiuSimons/luci-app-dae package/dae
 rm -rf feeds/luci/applications/luci-app-dae
 rm -rf feeds/luci/applications/luci-app-daed
 
+git clone https://github.com/QiuSimons/luci-app-dae package/dae
 #git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 #rm -rf package/helloworld/luci-app-daed
 #rm -rf package/helloworld/daed

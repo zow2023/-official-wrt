@@ -92,6 +92,11 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
+    - name: fix rust
+      run: |  
+        cd /mnt/work/openwrt
+        sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
+
     - name: Download package
       id: package
       run: |

@@ -37,8 +37,8 @@ git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/lu
 #git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
 #git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 
-#rm -rf feeds/luci/applications/luci-app-dae
-#rm -rf feeds/luci/applications/luci-app-daed
+rm -rf feeds/luci/applications/luci-app-dae
+rm -rf feeds/luci/applications/luci-app-daed
 
 git clone https://github.com/QiuSimons/luci-app-dae package/dae
 #git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
@@ -54,8 +54,8 @@ git clone https://github.com/QiuSimons/luci-app-dae package/dae
 
 
 #git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
-#git clone https://github.com/w9315273/luci-app-adguardhome package/luci-app-adguardhome
-git clone https://github.com/TanZhiwen2001/luci-app-adguardhome package/luci-app-adguardhome
+git clone https://github.com/w9315273/luci-app-adguardhome package/luci-app-adguardhome
+#git clone https://github.com/TanZhiwen2001/luci-app-adguardhome package/luci-app-adguardhome
 
 git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
 #git clone https://github.com/x-wrt/com.x-wrt package/x
@@ -101,7 +101,7 @@ git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/l
 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
 
 # Modify default IP
-sed -i 's/192.168.15.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile

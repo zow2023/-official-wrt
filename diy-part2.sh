@@ -37,8 +37,8 @@ git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/lu
 #git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
 #git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 
-rm -rf feeds/luci/applications/luci-app-dae
-rm -rf feeds/luci/applications/luci-app-daed
+#rm -rf feeds/luci/applications/luci-app-dae
+#rm -rf feeds/luci/applications/luci-app-daed
 
 git clone https://github.com/QiuSimons/luci-app-dae package/dae
 #git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
@@ -97,7 +97,7 @@ git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/l
 # rm -rf feeds/packages/net/v2ray-geodata
 # git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos
 
-#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
 
 # Modify default IP

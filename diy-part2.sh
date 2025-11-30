@@ -57,7 +57,7 @@ git clone https://github.com/QiuSimons/luci-app-dae package/dae
 
 #git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
 git clone https://github.com/w9315273/luci-app-adguardhome package/luci-app-adguardhome
-#git clone https://github.com/TanZhiwen2001/luci-app-adguardhome package/luci-app-adguardhome
+#git clone  https://github.com/sirpdboy/luci-app-adguardhome package/luci-app-adguardhome
 
 git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
 #git clone https://github.com/x-wrt/com.x-wrt package/x

@@ -91,9 +91,7 @@ git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages
 #git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-24.10 feeds/packages/lang/node
 
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
-
-#git clone https://github.com/kenzok8/golang -b 1.23 feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
 
 # rm -rf feeds/packages/net/v2ray-geodata
 # git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos

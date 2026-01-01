@@ -42,7 +42,7 @@ rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardho
 #rm -rf feeds/luci/applications/luci-app-daed
 #rm -rf feeds/luci/applications/luci-app-homeproxy
 git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
-git clone https://github.com/QiuSimons/luci-app-dae package/dae
+git clone https://github.com/QiuSimons/luci-app-daed package/dae
 git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 #rm -rf package/helloworld/luci-app-daed
 #rm -rf package/helloworld/daed
@@ -86,9 +86,9 @@ git clone https://github.com/gSpotx2f/luci-app-interfaces-statistics package/luc
 #rm -rf feeds/packages/utils/v2dat
 
 rm -rf feeds/packages/lang/node
-git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-23.05 feeds/packages/lang/node
+#git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-23.05 feeds/packages/lang/node
 
-#git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-24.10 feeds/packages/lang/node
+git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-24.10 feeds/packages/lang/node
 
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang

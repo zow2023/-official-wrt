@@ -34,9 +34,6 @@ git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/lu
 
 rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardhome}
 
-#git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
-#git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
-
 #rm -rf feeds/packages/net/dae
 #rm -rf feeds/luci/applications/luci-app-dae
 #rm -rf feeds/luci/applications/luci-app-daed
@@ -59,12 +56,11 @@ git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 git clone https://github.com/w9315273/luci-app-adguardhome package/luci-app-adguardhome
 #git clone  https://github.com/sirpdboy/luci-app-adguardhome package/luci-app-adguardhome
 
-#git clone https://github.com/x-wrt/com.x-wrt package/x
+git clone https://github.com/x-wrt/com.x-wrt package/x
 
 #git clone https://github.com/remittor/zapret-openwrt package/zapret
 
 # git clone https://github.com/4IceG/luci-app-timecontrol package/luci-app-timecontrol
-
 #git clone https://github.com/sirpdboy/luci-app-timecontrol package/luci-app-timecontrol
 
 #git clone https://github.com/sbwml/autocore-arm package/autocore-arm 
@@ -96,7 +92,7 @@ git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/l
 # rm -rf feeds/packages/net/v2ray-geodata
 # git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos
 
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
 
 # Modify default IP

@@ -50,7 +50,7 @@ git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 # git clone https://github.com/peter-tank/openwrt-minisign.git package/minisign
 # git clone https://github.com/peter-tank/luci-app-dnscrypt-proxy2 package/luci-app-dnscrypt-proxy2
 
-
+git clone https://github.com/gaobin89/luci-app-timecontrol package/luci-app-timecontrol
 #git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
 git clone https://github.com/w9315273/luci-app-adguardhome package/luci-app-adguardhome
 #git clone  https://github.com/sirpdboy/luci-app-adguardhome package/luci-app-adguardhome

@@ -108,13 +108,11 @@ jobs:
      - name: Fix libnftnl autotools version mismatch
        run: |
            cd /mnt/work/openwrt
-           # 先解压源码
-           make package/libs/libnftnl/prepare V=s 2>/dev/null || true
-           NFTNL_DIR=$(find build_dir -maxdepth 3 -name "libnftnl-*" -type d | head -1)
-           echo "Found: $NFTNL_DIR"
-           # 用系统 automake 1.16.5 重新生成全部 autotools 文件
-           cd "$NFTNL_DIR"
-           autoreconf -fi
+           # 在 libnftnl Makefile 中插入 PKG_FIXUP:=autoreconf
+           grep -q "PKG_FIXUP" package/libs/libnftnl/Makefile || \
+             sed -i '/^PKG_INSTALL/i PKG_FIXUP:=autoreconf' package/libs/libnftnl/Makefile
+           # 验证插入成功
+           grep "PKG_FIXUP" package/libs/libnftnl/Makefile
            
      - name: Add libcron package
        run: |

@@ -105,13 +105,20 @@ jobs:
            cd /mnt/work/openwrt
            sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
 
-     - name: Fix automake version symlink
+     - name: Fix automake-1.17 and libnftnl timestamp
        run: |
-           AUTOMAKE_BIN=$(which automake)
-           AUTOMAKE_VER=$(automake --version | head -1 | grep -oP '[\d]+\.[\d]+$')
-           sudo ln -sf $AUTOMAKE_BIN /usr/local/bin/automake-${AUTOMAKE_VER%.*}.17 2>/dev/null || true
-           sudo ln -sf $AUTOMAKE_BIN /usr/local/bin/automake-1.17
-           automake-1.17 --version
+           # 软链接放到 /usr/bin 确保优先被找到
+           sudo ln -sf $(which automake) /usr/bin/automake-1.17
+           
+           # 提前解压 libnftnl 并 touch 时间戳，防止 make 触发 automake
+           cd /mnt/work/openwrt
+           make package/libs/libnftnl/prepare V=s 2>/dev/null || true
+           NFTNL_DIR=$(find build_dir -maxdepth 3 -name "libnftnl-*" -type d 2>/dev/null | head -1)
+           if [ -n "$NFTNL_DIR" ]; then
+             echo "Touching autotools files in $NFTNL_DIR"
+             find "$NFTNL_DIR" -name "Makefile.in" -o -name "aclocal.m4" \
+               -o -name "configure" -o -name "config.h.in" | xargs touch
+           fi
            
      - name: Add libcron package
        run: |

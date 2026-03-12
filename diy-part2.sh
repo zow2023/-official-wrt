@@ -10,8 +10,8 @@
 # See /LICENSE for more information.
 
  
-git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+#git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+#git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 #git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
@@ -29,20 +29,19 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 #git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 
 # 移除 openwrt feeds 自带的核心包
-#rm -rf feeds/packages/net/{xray*,v2ray*,v2ray*,sing*}
-
-#rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardhome}
+rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardhome}
 
 #rm -rf feeds/packages/net/dae
 #rm -rf feeds/luci/applications/luci-app-dae
 #rm -rf feeds/luci/applications/luci-app-daed
 #rm -rf feeds/luci/applications/luci-app-homeproxy
-git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
+#git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
+
 git clone https://github.com/QiuSimons/luci-app-dae -b kix package/dae
 git clone https://github.com/QiuSimons/vmlinux-btf package/vmlinux-btf
-#git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
+git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 #rm -rf package/helloworld/luci-app-daed
-#rm -rf package/helloworld/daed
+rm -rf package/helloworld/dae
 
 #git clone https://github.com/QiuSimons/luci-app-daed package/dae
 

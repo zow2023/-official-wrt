@@ -37,11 +37,11 @@ rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardho
 #rm -rf feeds/luci/applications/luci-app-homeproxy
 #git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
 
-#git clone https://github.com/QiuSimons/luci-app-dae -b kix package/dae
+git clone https://github.com/QiuSimons/luci-app-dae -b kix package/dae
 #git clone https://github.com/QiuSimons/vmlinux-btf package/vmlinux-btf
 git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 #rm -rf package/helloworld/luci-app-daed
-#rm -rf package/helloworld/dae
+rm -rf package/helloworld/dae
 
 #git clone https://github.com/QiuSimons/luci-app-daed package/dae
 

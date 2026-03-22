@@ -105,14 +105,14 @@ jobs:
            cd /mnt/work/openwrt
            sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
 
-     #- name: Fix libnftnl autotools version mismatch
-      # run: |
-          # cd /mnt/work/openwrt
+     - name: Fix libnftnl autotools version mismatch
+       run: |
+           cd /mnt/work/openwrt
            # 在 libnftnl Makefile 中插入 PKG_FIXUP:=autoreconf
-         #  grep -q "PKG_FIXUP" package/libs/libnftnl/Makefile || \
-        #     sed -i '/^PKG_INSTALL/i PKG_FIXUP:=autoreconf' package/libs/libnftnl/Makefile
+           grep -q "PKG_FIXUP" package/libs/libnftnl/Makefile || \
+           sed -i '/^PKG_INSTALL/i PKG_FIXUP:=autoreconf' package/libs/libnftnl/Makefile
            # 验证插入成功
-       #    grep "PKG_FIXUP" package/libs/libnftnl/Makefile
+           grep "PKG_FIXUP" package/libs/libnftnl/Makefile
            
      - name: Add libcron package
        run: |
@@ -120,6 +120,25 @@ jobs:
            mkdir -p package/libcron && \
            wget -O package/libcron/Makefile \
            https://raw.githubusercontent.com/immortalwrt/packages/master/libs/libcron/Makefile
+
+     - name: Patch Kernel Config for NETKIT
+       run: |
+          KERNEL_CONF="/mnt/work/openwrt/target/linux/mediatek/mt7622/config-6.12"
+          set_kernel_config() {
+            local key=$1
+            local file=$2
+            if grep -qE "^${key}=|^# ${key} is not set" "$file"; then
+              sed -i -E "s|^.*${key}.*|${key}=y|" "$file"
+            else
+              echo "${key}=y" >> "$file"
+            fi
+          }
+          set_kernel_config "CONFIG_BPF_SYSCALL"    "$KERNEL_CONF"
+          set_kernel_config "CONFIG_NETKIT"         "$KERNEL_CONF"
+          set_kernel_config "CONFIG_DEBUG_INFO_BTF" "$KERNEL_CONF"
+          # 验证写入结果
+          grep -E "CONFIG_BPF_SYSCALL|CONFIG_NETKIT|CONFIG_DEBUG_INFO" "$KERNEL_CONF"
+          
            
      - name: Download package
        id: package
@@ -130,12 +149,12 @@ jobs:
            find dl -size -1024c -exec ls -l {} \;
            find dl -size -1024c -exec rm -f {} \;
            
-     #- name: Patch kernel config for new Kconfig options
-      # run: |
-       #    CONFIG="target/linux/mediatek/mt7622/config-6.12"
-        #   cd /mnt/work/openwrt
-         #  grep -q "NF_CONNTRACK_CHAIN_EVENTS" $CONFIG || \
-          #   echo "# CONFIG_NF_CONNTRACK_CHAIN_EVENTS is not set" >> $CONFIG
+     - name: Patch kernel config for new Kconfig options
+       run: |
+           CONFIG="target/linux/mediatek/mt7622/config-6.12"
+           cd /mnt/work/openwrt
+           grep -q "NF_CONNTRACK_CHAIN_EVENTS" $CONFIG || \
+           echo "# CONFIG_NF_CONNTRACK_CHAIN_EVENTS is not set" >> $CONFIG
              
      - name: Compile the firmware
        id: compile

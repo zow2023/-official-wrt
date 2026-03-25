@@ -37,18 +37,16 @@ rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardho
 #rm -rf feeds/luci/applications/luci-app-homeproxy
 #git clone https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
 
-git clone https://github.com/daeuniverse/dae package/dae
 #git clone https://github.com/QiuSimons/luci-app-dae package/dae
+#git clone https://github.com/QiuSimons/luci-app-daed package/dae
 #git clone https://github.com/QiuSimons/vmlinux-btf package/vmlinux-btf
-git clone https://github.com/kozhini/luci-app-dae package/luci-app-dae
+
+git clone https://github.com/JohnsonRan/InfinityDuck package/new/InfinityDuck
 git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
 rm -rf package/helloworld/luci-app-dae
 rm -rf package/helloworld/dae
 
-#git clone https://github.com/QiuSimons/luci-app-daed package/dae
-
 #git clone https://github.com/DNSCrypt/dnscrypt-proxy.git feeds/packages/net/dnscrypt-proxy2
-
 # git clone https://github.com/peter-tank/openwrt-minisign.git package/minisign
 
 #git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome

@@ -41,7 +41,7 @@ rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardho
 #git clone https://github.com/QiuSimons/vmlinux-btf package/vmlinux-btf
 git clone https://github.com/kozhini/luci-app-dae package/dae
 git clone https://github.com/zow2023/openwrt_helloworld package/helloworld
-#rm -rf package/helloworld/luci-app-daed
+rm -rf package/helloworld/luci-app-dae
 rm -rf package/helloworld/dae
 
 #git clone https://github.com/QiuSimons/luci-app-daed package/dae

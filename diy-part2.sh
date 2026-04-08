@@ -12,6 +12,7 @@
  
 #git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 #git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+git clone https://github.com/kenzok78/luci-design-bundle.git package/luci-design-bundle
 
 #git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
@@ -25,7 +26,7 @@
 
 rm -rf feeds/luci/applications/luci-app-adguardhome
 rm -rf feeds/packages/net/smartdns  
-#git clone https://github.com/zow2023/openwrt-smartdns feeds/packages/net/smartdns
+git clone https://github.com/kenzok78/luci-app-smartdns feeds/packages/net/smartdns
 #git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 
 # 移除 openwrt feeds 自带的核心包
@@ -49,7 +50,7 @@ rm -rf package/helloworld/dae
 #git clone https://github.com/DNSCrypt/dnscrypt-proxy.git feeds/packages/net/dnscrypt-proxy2
 # git clone https://github.com/peter-tank/openwrt-minisign.git package/minisign
 
-#git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/luci-app-adguardhome
+#git clone https://github.com/kenzok78/luci-app-adguardhome package/luci-app-adguardhome
 #git clone https://github.com/w9315273/luci-app-adguardhome package/luci-app-adguardhome
 git clone https://github.com/OneNAS-space/luci-app-adguardhome package/luci-app-adguardhome
 git clone https://github.com/gaobin89/luci-app-timecontrol package/luci-app-timecontrol
